@@ -1,1 +1,10 @@
-# Maths-3-
+- [Lecture 1](https://viharkheni.github.io/Maths-3/1)
+- [Lecture 2](https://viharkheni.github.io/Maths-3/2)
+- [Lecture 3](https://viharkheni.github.io/Maths-3/3)
+- [Lecture 4](https://viharkheni.github.io/Maths-3/4)
+- [Lecture 5](https://viharkheni.github.io/Maths-3/5)
+- [Lecture 6](https://viharkheni.github.io/Maths-3/6)
+- [Lecture 7](https://viharkheni.github.io/Maths-3/7)
+- [Lecture 8](https://viharkheni.github.io/Maths-3/8)
+- [Lecture 9](https://viharkheni.github.io/Maths-3/9)
+- [Lecture 10](https://viharkheni.github.io/Maths-3/10)
