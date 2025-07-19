@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%8F%E0%AA%95%E0%AA%95-%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AA%BF%E0%AA%A8%E0%AB%8B%E0%AA%AE-%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AA%B0%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AB%87%E0%AA%B6%E0%AA%A8-%E0%AA%B8%E0%AA%82%E0%AA%95%E0%AA%B2%E0%AB%8D%E0%AA%AA%E0%AA%A8%E0%AA%BE%E0%AA%93-%E0%AA%85%E0%AA%A8%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AA%A4%E0%AA%BE-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A3%E0%AA%A8%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%95%E0%AA%A8%E0%AB%8D%E0%AA%A1%E0%AA%BF%E0%AA%B6%E0%AA%A8">એકક પોલિનોમ ઇન્ટરપોલેશન: સંકલ્પનાઓ, અનન્યતા, વર્ણનપદ્ધતિઓ અને કન્ડિશન</h1>
+<p>પોલિનોમ ઇન્ટરપોલેશન આંકયુગલ (અંકગણિત + ભૌતિક) જ્ઞાનમાં મૂળભૂત સાધન છે. ટૂંકમાં, આપેલ અંતર્પોલેશન બિંદુઓને ચોક્કસ ક્રમના એકમાત્ર પોલિનોમ વડે બાંધી શકાય છે—પરંતુ ક્યારે, કયા સ્વરૂપે અને કેટલી સંખ્યામાં આ પોલિનોમ અનન્ય બને છે, તથા આ પ્રક્રિયાની અંકીય સ્થિરતા (condition) કેવી રીતે આંકી શકાય—આ પ્રશ્નો પર સ્પષ્ટ સમજણી વિના કોઈ પણ મૌખિક પરીક્ષા પાર પાડવી મુશ્કેલ બની શકે. નીચેના વિભાગો આ તમામ મુદ્દાઓને વિગતવાર, אך સરળ ગુજરાતી ભાષામાં,  દસ મિનિટ ની પ્રસ્તુતિ માટે લાયક ક્રમ અને ઉદાહરણો સહિત समઝાવે છે.</p>
+<h2 id="1-%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AA%B0%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AB%87%E0%AA%B6%E0%AA%A8%E0%AA%A8%E0%AB%80-%E0%AA%87%E0%AA%A8%E0%AA%AA%E0%AB%81%E0%AA%9F-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F">1. ઇન્ટરપોલેશનની ઇનપુટ અને આઉટપુટ</h2>
+<h3 id="11-%E0%AA%87%E0%AA%A8%E0%AA%AA%E0%AB%81%E0%AA%9F-input">1.1 ઇનપુટ (Input)</h3>
+<ol>
+<li><strong>ડેટા બિંદુઓ</strong>: ક્રમ <code>(x_i, y_i)</code> માટે $i=0,1,\dots ,n$ સુધીના સુવિકલ સ્થિરબિંદુઓ, જ્યાં $x_i$ સંપૂર્ણ એકબીજાથી અલગ (સપષ્ટ) હોઇ અને $y_i$ સંખ્યાત્મક મૂલ્યો છે.</li>
+<li><strong>પોલિનોમ નો ઓર્ડર પસંદ</strong>: સામાન્ય રીતે $n$-આવનાં ડેટા બિંદુઓ હોય તો $n$-દજ્જો (ડિગ્રી $n$) ની  અથવા સૌથી ઓછી આવશ્યક ડિગ્રી વાળું પોલિનોમ શોધીએ છીએ.</li>
+</ol>
+<h3 id="12-%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F-output">1.2 આઉટપુટ (Output)</h3>
+<ul>
+<li><strong>એકમાત્ર પોલિનોમ $p_n(x)$</strong>: એવો અસલ પોલિનોમ જે દરેક ઇનપુટ $x_i$ પર ચોક્કસ $y_i$ મૂલ્ય આપે, અથવા શબ્દ લઘુ કરે તો $p_n(x_i)=y_i$ બધાં $i$ માટે સત્ય બણે.</li>
+</ul>
+<h2 id="2-%E0%AA%85%E0%AA%A8%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AA%A4%E0%AA%BE-uniqueness-%E0%AA%A8%E0%AB%80-%E0%AA%B6%E0%AA%B0%E0%AA%A4%E0%AB%8B">2. અનન્યતા (Uniqueness) ની શરતો</h2>
+<p>પ્રથમ મહત્વનું પ્રશ્ન એ છે કે કેટલા શરતો હેઠાને એવો પોલિનોમ એકજ મળે?</p>
+<ul>
+<li><strong>વાંડર્મોન્ગ મેટ્રિક્સ</strong> $V$ બનાવીએ ($V_{ij}=x_i^j$) તો $V$ ની ડિટરમિનન્ટ $\det(V)\neq0$ ગુજરાત અર્થ એ છે કે $x_i$ એકબીજાથી  અલગ છે.</li>
+<li>$\det(V)\neq0$ થવાથી લિનિયર સિસ્ટમ $V c = y$ નો એકજ ઉકેલ મળે ને તે $c$ ગૂણાંક $p_n(x)=\sum_{j=0}^{n} c_j x^j$ નિર્ધારિત કરે.</li>
+<li>તેથી <strong>સપષ્ટ $x$-મૂલ્યો</strong> અને <strong>$n+1$ ડેટા બિંદુ</strong> એ અનન્ય પોલિનોમ હાંસલ કરવાની અટૂટ શરત છે.</li>
+</ul>
+<h2 id="3-%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AA%BF%E0%AA%A8%E0%AB%8B%E0%AA%AE-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A3%E0%AA%A8%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93">3. પોલિનોમ વર્ણનપદ્ધતિઓ</h2>
+<p>ડીજિટલ ગણા-ગણિત માં એકળઇ પોલિનોમ BC પણ છ કે તે હજુ કેવી રીતે વર્ણવવામાં આવે—પ્રત્યેક આકાર વિશિષ્ટ ગુણ  અને ા સંખ્યિતિ હાંસલ કરાવે છે.</p>
+<h3 id="31-%E0%AA%AA%E0%AA%BE%E0%AA%B5%E0%AA%B0-%E0%AA%AC%E0%AB%87%E0%AA%B8%E0%AA%BF%E0%AA%B8-%E0%AA%B8%E0%AA%AE%E0%AA%BE%E0%AA%9C%E0%AB%8D%E0%AA%AF%E0%AB%8B-%E0%AA%B0%E0%B1%82%E0%B0%AA">3.1 પાવર બેસિસ (સમાજ્યો રూప)</h3>
+<p>$p_n(x) = c_0 + c_1 x + c_2 x^2 + \dots + c_n x^n$<br>
+લેખીત સરળ છે પણ ઉચ્ચ ડિગ્રી પર અંકીય અસ્થિર થવાની (પાવર અધિક છ તો $x^n$ વિશાળ/નાનું ભી વધારે) શક્યતા વધે.</p>
+<h3 id="32-%E0%AA%B2%E0%AA%BE%E0%AA%97%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%82%E0%AA%9C-%E0%AA%B0%E0%AB%81%E0%AA%AA">3.2 લાગ્રાંજ રુપ</h3>
+<p>$p_n(x)=\sum_{i=0}^{n} y_i,\ell_i(x)$<br>
+અહીં $\ell_i(x)$ લાગ્રાંજ આધાર પોલિનોમ ,$\ell_i(x_j)=\delta_{ij}$.</p>
+<ul>
+<li><strong>લાભ</strong>: સારળી સુસંગ સાંકેતિક રૂપ ; ડેટા બિંદુ ફેરફાર વગર ઝડપથી ગ્રહણ કરાય.</li>
+<li><strong>ગટાડા</strong>: નવા $y_i$ શામેલ કરતાં પૂરો પુનર્ગણિત કરવો પડે.</li>
+</ul>
+<h3 id="33-%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%9F%E0%AA%A8-%E0%AA%A1%E0%AA%BF%E0%AA%B5%E0%AA%BE%E0%AA%88%E0%AA%A1%E0%AB%87%E0%AA%A1-%E0%AA%A1%E0%AA%BF%E0%AA%AB%E0%AA%B0%E0%AA%A8%E0%AB%8D%E0%AA%B8">3.3 ન્યુટન  (ડિવાઈડેડ ડિફરન્સ)</h3>
+<p>$p_n(x)=a_0 + a_1(x-x_0)+a_2(x-x_0)(x-x_1)+\dots$</p>
+<ul>
+<li><strong>લાભ</strong>: ઇનક્રિમેન્ટલ અપડેટ એ ત્રાટકે નવા બિંદુ જોડાય તો છેલ્લો ટર્મ માત્ર ઉમેરી દઈ શકીએ.</li>
+<li><strong>અંકીય સુધાર</strong>: લાગ્રાંજ ની તુલનામાં થોડી સુઘડ પરુંટ આજે .</li>
+</ul>
+<h3 id="34-%E0%AA%AC%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%B8%E0%AB%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AB%8D%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%B2%E0%AA%BE%E0%AA%97%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%82%E0%AA%9C">3.4 બેરિસેન્ટ્રિક લાગ્રાંજ</h3>
+<p>$$<br>
+p_n(x)=\frac{\displaystyle\sum_{i=0}^{n}\frac{w_i,y_i}{x-x_i}}{\displaystyle\sum_{i=0}^{n}\frac{w_i}{x-x_i}},<br>
+\quad w_i=\frac1{\prod_{j\ne i}(x_i-x_j)}<br>
+$$</p>
+<ul>
+<li><strong>ઉત્કૃષ્ટ અંકીય સ્થિરતા</strong></li>
+<li><strong>ઝડપની દ્રષ્ટિએ ઉત્તમ</strong> (જ્યાં બહુ વખત પોલિનોમ મુલ્ય ગણવું હોય).</li>
+<li><strong>કારણ કે</strong> આ રૂપે ન્યુમેરેટર-ડિનૉમિનેટર માં સમાન બધ ઘાત રદ થવાથી રાઉન્ડ-ઓફ ભૂલ ન્યુન.</li>
+</ul>
+<h2 id="4-%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AA%B0%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AB%87%E0%AA%B6%E0%AA%A8-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%B8%E0%AA%82%E0%AA%97%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%95%E0%AA%A8%E0%AB%8D%E0%AA%A1%E0%AA%BF%E0%AA%B6%E0%AA%A8">4. ઇન્ટરપોલેશન પ્રસંગમાં કન્ડિશન</h2>
+<h3 id="41-%E0%AA%AD%E0%AA%BE%E0%AA%B7%E0%AA%BE%E0%AA%82%E0%AA%A4%E0%AA%B0">4.1 ભાષાંતર</h3>
+<p>કન્ડિશન સંકલ્પ અંકીય vis-વૈજ્ઞાનિક અર્થે એવું પૂછે છે કે:<br>
+“ઇનપુટ ડેટાની સૂબક્ષ ભૂલ $\delta y$ અથવા $\delta x$ પોલિનોમ $p_n$ નાં ઉત્પન્ન મૂલ્યો-પર શા ટ ટાડા ઉલટ પડકાર રૂપે વિસ્તરે છે?”<br>
+આ સંવેદનશીલતા પર આધારિત સંખ્યાતંત્ર વધારાની ભૂલ ઉપજાવી શકે કે ન — તે માપવા **કન્ડિશન નંબર $\kappa$** ઉપયોગ થાય.</p>
+<h3 id="42-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3-%E0%AA%B5%E0%AA%BE%E0%AA%82%E0%AA%A1%E0%AA%B0%E0%AB%8D%E0%AA%AE%E0%AB%8B%E0%AA%A8%E0%AB%8D%E0%AA%97-%E0%AA%B8%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%AE-%E0%AA%B8%E0%AA%BE%E0%AA%A5%E0%AB%87-equidistant-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%B8%E0%AA%B8-chebyshev-%E0%AA%A8%E0%AB%8B%E0%AA%A1%E0%AB%8D%E0%AA%B8">4.2 ઉદાહરણ: વાંડર્મોન્ગ સિસ્ટમ સાથે Equidistant વર્સસ Chebyshev નોડ્સ</h3>
+<ul>
+<li>Equidistant નોડ્સ $[-1,1]$ પર ધારી અંતે $\kappa(V)$ ઝડપથી એકસ્પોનેન્ચિયલ પଦે વધે.</li>
+<li>Chebyshev નોડ્સ $\cos\bigl(\frac{2k+1}{2n}\pi\bigr)$ લેવા થી વધતા ન ખસ વધે; અંકો પર ભૂલ ન વધરે.</li>
+<li>આ તફાવત ચિત્ર રૂપે જાણીતો છે.</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/f11dcfdbffda735f8d58470fc074c3c5/63672ef0-0faa-4945-964b-d398520662e4/9503819f.png" alt="Kondition des Vandermonde-Systems für Equidistante vs. Chebyshev-Knoten"></p>
+<p>Kondition des Vandermonde-Systems für Equidistante vs. Chebyshev-Knoten</p>
+<h3 id="43-%E0%AA%B8%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%B0%E0%AB%82%E0%AA%AA%E0%AB%87-%E0%AA%B8%E0%AA%B0%E0%AB%8D%E0%AA%B5%E0%AB%8B%E0%AA%A4%E0%AB%8D%E0%AA%A4%E0%AA%AE-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A3%E0%AA%A8--%E0%AA%AC%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%B8%E0%AB%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AB%8D%E0%AA%B0%E0%AA%BF%E0%AA%95">4.3 સુખ્ય રૂપે સર્વોત્તમ વર્ણન — બેરિસેન્ટ્રિક</h3>
+<ul>
+<li>કન્ડિશન વિશ્લેષણ અર્થ એ કે પ્રાપ્ત $\kappa$ સરહદ ટાંકવાની રસી પન બેરિસેન્ટ્રિક રૂપ સુધાર પેઢી સાથે કાર્યકારી.</li>
+<li>કારણ કે વાંડર્મોન્ગ જો પાવર બેસિસ પર આધાર હોય તો $\kappa$ વિશાળ થાય; જ્યારે બેરિસેન્ટ્રિક રૂપે કાર્ય ધ્યાન ન આવે કે ત્યાં $\kappa$ ઘણે ઓછું રહે.</li>
+</ul>
+<h2 id="5-%E0%AA%89%E0%AA%A6%E0%AB%8D%E0%AA%97%E0%AA%AE-implementation-%E0%AA%B8%E0%AB%82%E0%AA%9A%E0%AA%A8%E0%AB%8B">5. ઉદ્ગમ (Implementation) સૂચનો</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">વર્ણનપદ્ધતિ</th>
+<th style="text-align:left">મૂળભૂત લાભ</th>
+<th style="text-align:left">સંભવિત અવગુણ</th>
+<th style="text-align:left">શ્રેષ્ઠ ઉપયોગ પ્રસંગ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Power Basis</td>
+<td style="text-align:left">ગણિતમાં સરળ ભાગ વાણી</td>
+<td style="text-align:left">ઊંચી ડિગ્રી પર અંકીય અસ્થિર</td>
+<td style="text-align:left">લઘુ ડિગ્રી અને સૈદ્ધાંતિક અભ્યાસ</td>
+</tr>
+<tr>
+<td style="text-align:left">Lagrange</td>
+<td style="text-align:left">બંધબેસતું સૂત્ર, ચોક્કસ જરુર વાળા ફોર્મ</td>
+<td style="text-align:left">દરેક નવા બિંદુ માટે ફેર સુત્ર ફરી કલક્યૂ.</td>
+<td style="text-align:left">સાદી શ્રેણી ડેટા, સાધારણ ઍન્ગિનિયલૂ પ્રશ્ન</td>
+</tr>
+<tr>
+<td style="text-align:left">Newton</td>
+<td style="text-align:left">ઇનક્રિમેન્ટલ અપડેટ સાધ્ય</td>
+<td style="text-align:left">ક્રમાંકન અનુક્રમ પર નિર્ભર</td>
+<td style="text-align:left">કૌસલ/કદમ ઉચ્ચ ડિગ્રી રાહત</td>
+</tr>
+<tr>
+<td style="text-align:left">Barycentric</td>
+<td style="text-align:left">શ્રેષ્ઠ અંકીય સ્થિરતા, ઝડપ</td>
+<td style="text-align:left">વજન $w_i$ પૂર્વે હિસાબ જરૂરી</td>
+<td style="text-align:left">બહુવિધ evaluations, ગ્રાફ ડ્રોઇંગ, કન્ડિશન વિશ્લેષણ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-%E0%AA%B8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%82%E0%AA%B6-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%AA%E0%AA%B0%E0%AB%80%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AA%BE-%E0%AA%AE%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%97%E0%AA%A6%E0%AA%B0%E0%AB%8D%E0%AA%B6%E0%AA%BF%E0%AA%95%E0%AA%BE">6. સારાંશ અને પરીક્ષા-માર્ગદર્શિકા</h2>
+<ul>
+<li><strong>ઇનપુટ</strong>: $n+1$ સપષ્ટ $x_i$ અને સંખ્યાત્મક $y_i$.</li>
+<li><strong>આઉટપુટ</strong>: ડિગ્રી $n$ નાનો એકમાત્ર $p_n(x)$ જે $p_n(x_i)=y_i$.</li>
+<li><strong>અનન્યતા</strong>: વાંડર્મોન્ગ ડિટરમિનન્ટ નશૂન્ય.</li>
+<li><strong>વર્ણનપદ્ધતિ</strong>: Power → સૌથી સારું લખાણ, Newton → ઇનક્રિમેન્ટલ, Lagrange → સફાઈ પર દૃષ્ટિ, Barycentric → અંકીય સ્તર હિતાવહ.</li>
+<li><strong>કન્ડિશન</strong>: Equidistant નોડ્સ સાથે જીવાયું સિસ્. ત્વરિત અસ્થિર ; Chebyshev નોડ્સ અને Barycentric રૂપ લ્યો તો સ્થિરતા વધુ.</li>
+</ul>
+<p>આ બધા બિંદુઓ ન મુખ્ય સૂત્ર, વ્યાખ્યા અને ઉદાહરણ તમારી દસ મિનિટ ની મૌખિક પરીક્ષા માટે પર્યાપ્ત ધિર આધાર પાદ અરૂપ એટલું વિસ્તાર આ નિબંધ રમાં સમાવેલું છે. વાંચન પછી સમય લઈ ખુદ સાથે પ્રશ્નો ઉઠાવો—જેમ ક “કઈ સ્થિતિ માં ન્યુટન રુપ શ્રેષ્ઠ છે?”—અને આ પોઈન્ટ આપથી જ સમજશો તો પરીક્ષક ની પ્રશ્નોત્તરી સુમેળ સાથે ઉત્તર આપી શકશો.</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

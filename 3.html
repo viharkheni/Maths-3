@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%B8%E0%AA%BE%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BF%E0%AA%95-%E0%AA%8F%E0%AA%95%E0%AB%80%E0%AA%95%E0%AA%B0%E0%AA%A3-numerical-integration---%E0%AA%AE%E0%AB%8C%E0%AA%96%E0%AA%BF%E0%AA%95-%E0%AA%AA%E0%AA%B0%E0%AB%80%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AA%BE-%E0%AA%A4%E0%AB%88%E0%AA%AF%E0%AA%BE%E0%AA%B0%E0%AB%80">સાંખ્યિક એકીકરણ (Numerical Integration) - મૌખિક પરીક્ષા તૈયારી</h1>
+<p>તમારી ગણિત ૩ ની મૌખિક પરીક્ષા માટે સાંખ્યિક એકીકરણની વિગતવાર માહિતી અહીં પ્રસ્તુત છે. આ મહત્વપૂર્ણ વિષયને સમજવા માટે અમે પાંચ મુખ્ય પ્રશ્નોના ઉત્તરો આપીશું.</p>
+<h2 id="%E0%AB%A7-%E0%AA%B8%E0%AA%BE%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BF%E0%AA%95-%E0%AA%8F%E0%AA%95%E0%AB%80%E0%AA%95%E0%AA%B0%E0%AA%A3%E0%AA%A8%E0%AB%80-%E0%AA%9C%E0%AA%B0%E0%AB%82%E0%AA%B0%E0%AA%BF%E0%AA%AF%E0%AA%BE%E0%AA%A4-%E0%AA%B6%E0%AA%BE-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87-%E0%AA%AA%E0%AA%A1%E0%AB%87-%E0%AA%9B%E0%AB%87">૧. સાંખ્યિક એકીકરણની જરૂરિયાત શા માટે પડે છે?</h2>
+<p>સાંખ્યિક એકીકરણની જરૂરિયાત મુખ્યત્વે <strong>ત્રણ કારણોસર</strong> પડે છે<a href="mathe_3_bain_material03.pdf">^1</a>:</p>
+<h3 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%95%E0%AA%BE%E0%AA%B0%E0%AA%A3%E0%AB%8B">મુખ્ય કારણો:</h3>
+<p><strong>પ્રથમ કારણ - અજ્ઞાત આદિમ વિધર્મી (Unknown Antiderivatives)</strong></p>
+<ul>
+<li>કેટલાક વિધર્મો માટે આદિમ વિધર્મી શોધવાનું અશક્ય હોય છે</li>
+<li>ઉદાહરણ: <code>∫₀¹ (1/√2π)e^(-x²/2) dx</code> જેવા સામાન્ય વિતરણના સમીકરણો<a href="mathe_3_bain_material03.pdf">^1</a></li>
+<li>આવા વિધર્મોને elementary functions થી વ્યક્ત કરી શકાતું નથી</li>
+</ul>
+<p><strong>બીજું કારણ - માત્ર સંખ્યાત્મક મૂલ્યો ઉપલબ્ધ</strong></p>
+<ul>
+<li>કોમ્પ્યુટર ગ્રાફિક્સમાં લાઇટ મોડેલિંગ જેવા કિસ્સાઓમાં વિધર્મી ફક્ત ચોક્કસ સ્થળોએ જ મેળવી શકાય છે<a href="mathe_3_bain_material03.pdf">^1</a></li>
+<li>પ્રયોગશાળાના માપણ અથવા સેન્સર ડેટા દ્વારા મળેલા બિંદુઓ</li>
+</ul>
+<p><strong>ત્રીજું કારણ - કાર્યક્ષમતા (Efficiency)</strong></p>
+<ul>
+<li>કેટલાક વખતે આદિમ વિધર્મી અસ્તિત્વમાં હોય પણ તેની ગણતરી ખૂબ જટિલ અથવા ધીમી હોય છે</li>
+</ul>
+<h2 id="%E0%AB%A8-%E0%AA%AC%E0%AA%B9%E0%AB%81%E0%AA%AA%E0%AA%A6%E0%AB%80-%E0%AA%85%E0%AA%A8%E0%AB%81%E0%AA%AE%E0%AA%BE%E0%AA%A8%E0%AA%A8-%E0%AA%A6%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%B0%E0%AA%BE-%E0%AA%B8%E0%AA%BE%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BF%E0%AA%95-%E0%AA%8F%E0%AA%95%E0%AB%80%E0%AA%95%E0%AA%B0%E0%AA%A3">૨. બહુપદી અનુમાનન દ્વારા સાંખ્યિક એકીકરણ</h2>
+<h3 id="%E0%AA%B8%E0%AB%88%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%BE%E0%AA%82%E0%AA%A4%E0%AA%BF%E0%AA%95-%E0%AA%85%E0%AA%AD%E0%AA%BF%E0%AA%97%E0%AA%AE">સૈદ્ધાંતિક અભિગમ:</h3>
+<p><strong>પ્રાથમિક પગલાં</strong><a href="mathe_3_bain_material03.pdf">^1</a>:</p>
+<ol>
+<li><strong>સ્ટુત્ઝસ્ટેલેન (Support Points) પસંદ કરવા</strong>: <code>a = x₀ &lt; x₁ &lt; x₂ &lt; ... &lt; xₙ = b</code></li>
+<li><strong>વિધર્મીના મૂલ્યો મેળવવા</strong>: <code>y₀ = f(x₀), y₁ = f(x₁), ..., yₙ = f(xₙ)</code></li>
+<li><strong>અનુમાનન બહુપદી બનાવવું</strong>: <code>p(x)</code> જે આ બિંદુઓમાંથી પસાર થાય</li>
+<li><strong>એકીકરણ કરવું</strong>: <code>∫ₐᵇ f(x)dx ≈ ∫ₐᵇ p(x)dx</code></li>
+</ol>
+<h3 id="%E0%AA%B2%E0%AA%BE%E0%AA%97%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%82%E0%AA%9C-%E0%AA%AC%E0%AA%B9%E0%AB%81%E0%AA%AA%E0%AA%A6%E0%AB%80-%E0%AA%B8%E0%AA%BE%E0%AA%A5%E0%AB%87-%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE">લાગ્રાંજ બહુપદી સાથે વ્યાખ્યા:</h3>
+<p>સૂત્ર: <code>∫ₐᵇ f(x)dx ≈ ∑ₖ₌₀ⁿ yₖ gₖ</code></p>
+<p>જ્યાં <code>gₖ = ∫ₐᵇ Lₖ(x)dx</code> એ વેઇટિંગ વેલ્યુ છે<a href="mathe_3_bain_material03.pdf">^1</a>.</p>
+<h2 id="%E0%AB%A9-%E0%AA%85%E0%AA%A8%E0%AB%81%E0%AA%AE%E0%AA%BE%E0%AA%A8%E0%AA%A8-%E0%AA%AC%E0%AA%B9%E0%AB%81%E0%AA%AA%E0%AA%A6%E0%AB%80%E0%AA%A8%E0%AA%BE-%E0%AA%8F%E0%AA%95%E0%AB%80%E0%AA%95%E0%AA%B0%E0%AA%A3%E0%AA%A8%E0%AB%80-%E0%AA%B8%E0%AA%AE%E0%AA%B8%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%93">૩. અનુમાનન બહુપદીના એકીકરણની સમસ્યાઓ</h2>
+<h3 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%B8%E0%AA%AE%E0%AA%B8%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%93">મુખ્ય સમસ્યાઓ:</h3>
+<p><strong>ખરાબ કન્ડિશનિંગ (Poor Conditioning)</strong><a href="mathe_3_bain_material02.pdf">^1</a>:</p>
+<ul>
+<li>n &gt; 10 સ્ટુત્ઝસ્ટેલેન માટે સમસ્યા ભયંકર બને છે</li>
+<li>સમાન અંતરાલે મુકવામાં આવેલા બિંદુઓ માટે વધુ ખરાબ પરિણામો</li>
+<li>નાના ફેરફારો મોટા ભૂલો તરફ દોરી જાય છે</li>
+</ul>
+<p><strong>રુંગે ઇફેક્ટ (Runge Effect)</strong><a href="mathe_3_bain_material02.pdf">^2</a>:</p>
+<ul>
+<li>ઉચ્ચ ડિગ્રીના બહુપદીઓ અનાવશ્યક વધઘટ બતાવે છે</li>
+<li>ખાસ કરીને અંતરાલની કિનારીઓ પર અસ્થિરતા</li>
+</ul>
+<p><strong>વ્યાવહારિક મુશ્કેલીઓ</strong>:</p>
+<ul>
+<li>ઘણા બધા સ્ટુત્ઝસ્ટેલેનની જરૂરિયાત પણ સંખ્યાત્મક ગણતરી મુશ્કેલ બનાવે છે<a href="mathe_3_bain_material03.pdf">^1</a></li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/ba2d8c573efbe7823a9e19c064a2e25a/4b297bcf-61e1-446f-be11-c5e8b27ab30a/d2f92a38.png" alt="Comparison of Numerical Integration Methods: Rectangular, Trapezoidal, and Simpson's Rule"></p>
+<p>Comparison of Numerical Integration Methods: Rectangular, Trapezoidal, and Simpson's Rule</p>
+<h2 id="%E0%AB%AA-%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF---%E0%AA%B8%E0%AA%BF%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AA%B8%E0%AA%A8-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%AE-simpsons-rule">૪. વ્યવહારિક પદ્ધતિ - સિમ્પસન નિયમ (Simpson's Rule)</h2>
+<h3 id="%E0%AA%B8%E0%AA%BF%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AA%B8%E0%AA%A8-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%AE-%E0%AA%95%E0%AB%87%E0%AA%AA%E0%AB%8D%E0%AA%B2%E0%AA%B0-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%AE">સિમ્પસન નિયમ (કેપ્લર નિયમ):</h3>
+<p><strong>મૂળભૂત સૂત્ર</strong><a href="mathe_3_bain_material03.pdf">^1</a>:<br>
+જો <code>n</code> સમ હોય તો:</p>
+<pre class="hljs"><code><div>∫ₐᵇ f(x)dx ≈ (h/3)[y₀ + 4y₁ + 2y₂ + 4y₃ + 2y₄ + ... + 4yₙ₋₁ + yₙ]
+</div></code></pre>
+<p>જ્યાં <code>h = (b-a)/n</code> અને <code>yᵢ = f(xᵢ)</code></p>
+<h3 id="%E0%AA%B5%E0%AA%BF%E0%AA%97%E0%AA%A4%E0%AA%B5%E0%AA%BE%E0%AA%B0-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">વિગતવાર ઉદાહરણ:</h3>
+<p><strong>વિધર્મી</strong>: <code>f(x) = e^(-x²/2)/√(2π)</code> (ગૌસીયન વિધર્મી)<br>
+<strong>અંતરાલ</strong>: <code>[-2, 2]</code><br>
+<strong>સચોટ મૂલ્ય</strong>: <code>0.95449974</code></p>
+<p><strong>વિવિધ n માટે પરિણામો</strong>:</p>
+<ul>
+<li>n=4: સિમ્પસન પરિણામ = 0.947211, ભૂલ = 0.007289</li>
+<li>n=8: સિમ્પસન પરિણામ = 0.954402, ભૂલ = 0.000098</li>
+<li>n=16: સિમ્પસન પરિણામ = 0.954495, ભૂલ = 0.000005</li>
+<li>n=32: સિમ્પસન પરિણામ = 0.954499, ભૂલ = 0.0000003</li>
+</ul>
+<h3 id="%E0%AA%85%E0%AA%A8%E0%AB%8D%E0%AA%AF-%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93">અન્ય વ્યાવહારિક પદ્ધતિઓ:</h3>
+<p><strong>1. ટ્રેપેઝોઇડલ નિયમ (Trapezoidal Rule)</strong><a href="mathe_3_bain_material03.pdf">^1</a>:</p>
+<pre class="hljs"><code><div>∫ₐᵇ f(x)dx ≈ (h/2)[y₀ + 2y₁ + 2y₂ + ... + 2yₙ₋₁ + yₙ]
+</div></code></pre>
+<p><strong>2. આયતાકાર નિયમ (Rectangular Rule)</strong><a href="mathe_3_bain_material03.pdf">^1</a>:<br>
+મધ્યબિંદુ પદ્ધતિ: <code>∫ₐᵇ f(x)dx ≈ h∑f(xᵢ₊₁/₂)</code></p>
+<h2 id="%E0%AB%AB-%E0%AA%AD%E0%AB%82%E0%AA%B2-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%82%E0%AA%A4%E0%AB%8D%E0%AA%B0%E0%AA%A3-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%85%E0%AA%9A%E0%AB%8B%E0%AA%95%E0%AB%8D%E0%AA%95%E0%AA%B8%E0%AA%A4%E0%AA%BE%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%B8%E0%AA%82%E0%AA%9A%E0%AA%BE%E0%AA%B2%E0%AA%A8">૫. ભૂલ નિયંત્રણ અને અચોક્કસતાનું સંચાલન</h2>
+<h3 id="%E0%AA%AD%E0%AB%82%E0%AA%B2%E0%AA%A8%E0%AA%BE-%E0%AA%95%E0%AB%8D%E0%AA%B0%E0%AA%AE-error-orders">ભૂલના ક્રમ (Error Orders):</h3>
+<p><strong>સૈદ્ધાંતિક ભૂલ અંદાજ</strong><a href="mathe_3_bain_material03.pdf">^1</a>:</p>
+<ul>
+<li><strong>આયતાકાર નિયમ</strong>: ભૂલ ∝ <code>h³/3 × max|f''(x)|</code></li>
+<li><strong>ટ્રેપેઝોઇડલ નિયમ</strong>: ભૂલ ∝ <code>h³/12 × max|f''(x)|</code></li>
+<li><strong>સિમ્પસન નિયમ</strong>: ભૂલ ∝ <code>h⁵/90 × max|f⁽⁴⁾(x)|</code></li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/ba2d8c573efbe7823a9e19c064a2e25a/72e78a4c-ca17-4688-9853-181df6a8ff28/044f7602.png" alt="Error Analysis: Convergence Rates of Numerical Integration Methods"></p>
+<p>Error Analysis: Convergence Rates of Numerical Integration Methods</p>
+<h3 id="%E0%AA%AD%E0%AB%82%E0%AA%B2-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%82%E0%AA%A4%E0%AB%8D%E0%AA%B0%E0%AA%A3%E0%AA%A8%E0%AB%80-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93">ભૂલ નિયંત્રણની પદ્ધતિઓ:</h3>
+<p><strong>1. અનુકૂલનીય પદ્ધતિ (Adaptive Methods)</strong>:</p>
+<ul>
+<li>પ્રારંભમાં મોટા h સાથે ગણતરી</li>
+<li>જરૂરિયાત મુજબ h ઘટાડીને બિનચોકસાઈ ઘટાડવી</li>
+<li>નિર્ધારિત સહનશીલતા પહોંચે ત્યાં સુધી પુનરાવૃત્તિ</li>
+</ul>
+<p><strong>2. રિચાર્ડસન એક્સ્ટ્રાપોલેશન</strong>:</p>
+<ul>
+<li>બે વિવિધ h મૂલ્યો સાથે ગણતરી</li>
+<li>ભૂલનો અંદાજ: <code>Error ≈ |I(h) - I(h/2)|</code></li>
+<li>સુધારેલ પરિણામ મેળવવો</li>
+</ul>
+<p><strong>3. પ્રાયોગિક ભૂલ જાણકારી</strong>:<br>
+અમારા ઉદાહરણમાં જ્યારે h અડધું થાય છે:</p>
+<ul>
+<li>સિમ્પસન ભૂલ લગભગ 16-32 ગણું ઘટે છે (સૈદ્ધાંતિક રીતે 32 ગણું અપેક્ષિત છે)</li>
+<li>ટ્રેપેઝોઇડલ ભૂલ લગભગ 4 ગણું ઘટે છે</li>
+</ul>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%B8%E0%AA%B2%E0%AA%BE%E0%AA%B9">વ્યાવહારિક સલાહ:</h3>
+<p><strong>પદ્ધતિ પસંદગી</strong>:</p>
+<ul>
+<li>સરળ વિધર્મો માટે: ટ્રેપેઝોઇડલ નિયમ પૂરતો</li>
+<li>ઉચ્ચ ચોકસાઈ જરૂરી: સિમ્પસન નિયમ</li>
+<li>અતિ જટિલ વિધર્મો માટે: અનુકૂલનીય પદ્ધતિઓ</li>
+</ul>
+<p><strong>ભૂલ મર્યાદા સેટિંગ</strong>:</p>
+<ul>
+<li>જરૂરિયાત મુજબ સહનશીલતા નક્કી કરવી (ઉદા: 10⁻⁶)</li>
+<li>પુનરાવૃત્તિક સુધારણા જ્યાં સુધી મર્યાદામાં ન આવે</li>
+<li>કોમ્પ્યુટેશનલ કિંમત અને ચોકસાઈ વચ્ચે સંતુલન</li>
+</ul>
+<p>આ સંપૂર્ણ માહિતી તમારી 10 મિનિટની મૌખિક પ્રસ્તુતિ માટે પૂરતી છે. મુખ્ય મુદ્દાઓ યાદ રાખો અને ઉદાહરણો સાથે સમજાવવાની તૈયારી કરો.</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

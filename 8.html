@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>8.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%93%E0%AA%A8%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%93%E0%AA%AB%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%93%E0%AA%AA%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%AE%E0%AA%BE%E0%AA%87%E0%AA%9D%E0%AB%87%E0%AA%B6%E0%AA%A8-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%8B%E0%AA%AC%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%AE%E0%AB%8D%E0%AA%B8---%E0%AA%B5%E0%AA%BF%E0%AA%97%E0%AA%A4%E0%AA%B5%E0%AA%BE%E0%AA%B0-%E0%AA%B8%E0%AA%AE%E0%AA%9C%E0%AA%BE%E0%AA%B5%E0%AA%9F">ઓનલાઇન અને ઓફલાઇન ઓપ્ટિમાઇઝેશન પ્રોબ્લેમ્સ - વિગતવાર સમજાવટ</h1>
+<h2 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%A4%E0%AA%AB%E0%AA%BE%E0%AA%B5%E0%AA%A4---%E0%AA%93%E0%AA%A8%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%B8%E0%AB%87%E0%AA%B8-%E0%AA%93%E0%AA%AB%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8">મુખ્ય તફાવત - ઓનલાઇન વર્સેસ ઓફલાઇન</h2>
+<p><strong>ઓનલાઇન અને ઓફલાઇન ઓપ્ટિમાઇઝેશન પ્રોબ્લેમ્સ</strong> વચ્ચેનો મૂળભૂત તફાવત માહિતીની ઉપલબ્ધતામાં છે. આને એક સરળ ઉદાહરણ દ્વારા સમજીએ:</p>
+<p><strong>સોનાની ખોટની શોધનું ઉદાહરણ:</strong></p>
+<p><strong>ઓફલાઇન વર્ઝન:</strong></p>
+<ul>
+<li>તમને પહેલેથી જ ખબર છે કે સોનાની ખોટ કયાં છે (સ્થાન s થી અંતર d પર)</li>
+<li>તમે તુરંત ઓપ્ટિમલ માર્ગ પસંદ કરી શકો છો</li>
+<li>કુલ અંતર = d (ન્યૂનતમ શક્ય)</li>
+</ul>
+<p><strong>ઓનલાઇન વર્ઝન:</strong></p>
+<ul>
+<li>તમને ખોટનું સ્થાન ખબર નથી</li>
+<li>તમારે વિવિધ દિશાઓમાં શોધ કરવી પડશે</li>
+<li>&quot;વર્ડોપ્પેલ્ન&quot; અલ્ગોરિધમ: પહેલા અંતર 1, પછી 2, પછી 4, 8... આમ બમણું કરતા રહેવું</li>
+<li>કુલ અંતર ≤ 9d/2 (કદાચ 9 ગણું લાંબું)</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9c934641cbf5222c23bb1f4774773701/d201c7e3-2e9a-4661-a907-26efb3bad429/8d50302d.png" alt="Comparison between Online and Offline Optimization Algorithms"></p>
+<p>Comparison between Online and Offline Optimization Algorithms</p>
+<h2 id="%E0%AA%95%E0%AB%8B%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AB%87%E0%AA%9F%E0%AA%BF%E0%AA%9F%E0%AA%BF%E0%AA%B5-%E0%AA%AB%E0%AB%87%E0%AA%95%E0%AB%8D%E0%AA%9F%E0%AA%B0-competitive-factor">કોમ્પેટિટિવ ફેક્ટર (Competitive Factor)</h2>
+<p><strong>કોમ્પેટિટિવ ફેક્ટર</strong> એ ઓનલાઇન અલ્ગોરિધમની કામગીરીનું માપદંડ છે:</p>
+<p><strong>વ્યાખ્યા:</strong> કોમ્પેટિટિવ ફેક્ટર c એ સૌથી નાનું સંખ્યા છે જે આ શરત સંતોષે:</p>
+<pre class="hljs"><code><div>ઓનલાઇન અલ્ગોરિધમની કિંમત ≤ c × ઓપ્ટિમલ ઓફલાઇન કિંમત
+</div></code></pre>
+<p><strong>મહત્વપૂર્ણ મુદ્દાઓ:</strong></p>
+<ul>
+<li>નાનું c = વધુ સારું પરફોર્મન્સ</li>
+<li>c = 1 મતલબ ઓપ્ટિમલ (પરંતુ ઓનલાઇન માટે સામાન્ય રીતે અશક્ય)</li>
+<li>વર્ડોપ્પેલ્ન અલ્ગોરિધમ: c = 9</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9c934641cbf5222c23bb1f4774773701/2dbbd86c-9825-4844-96af-37c5cf45467b/25ab2cd6.png" alt="Competitive Factors of Different Online Algorithms"></p>
+<p>Competitive Factors of Different Online Algorithms</p>
+<h2 id="%E0%AA%95%E0%AB%87%E0%AA%9A%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%8B%E0%AA%AC%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%AE-caching-problem">કેચિંગ પ્રોબ્લેમ (Caching Problem)</h2>
+<p><strong>કેચિંગ પ્રોબ્લેમ</strong> એ કોમ્પ્યુટર મેમરી મેનેજમેન્ટની સમસ્યા છે:</p>
+<p><strong>સિસ્ટમ સેટઅપ:</strong></p>
+<ul>
+<li><strong>મેઇન મેમરી:</strong> ધીમી, ઘણા ઓબ્જેક્ટ્સ (1,2,3,...,N)</li>
+<li><strong>કેચ:</strong> ઝડપી, માત્ર k ઓબ્જેક્ટ્સ માટે જગ્યા</li>
+<li><strong>પ્રોસેસર:</strong> ઓબ્જેક્ટ્સની માંગ કરે છે</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9c934641cbf5222c23bb1f4774773701/a93cd7a0-127b-4190-94c9-aadaae31458e/0e93a787.png" alt="Caching Problem System Architecture"></p>
+<p>Caching Problem System Architecture</p>
+<p><strong>મુખ્ય લક્ષ્ય:</strong> કેચ મિસેસની સંખ્યા ઓછી કરવી</p>
+<p><strong>કેચ મિસ:</strong> જ્યારે માંગવામાં આવેલ ઓબ્જેક્ટ કેચમાં નથી, તો તેને ધીમી મેઇન મેમરીમાંથી લાવવું પડે છે.</p>
+<h2 id="%E0%AA%93%E0%AA%AB%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%9D%E0%AA%A8%E0%AA%A8%E0%AB%8B-%E0%AA%93%E0%AA%AA%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%AE%E0%AA%B2-%E0%AA%B8%E0%AB%8B%E0%AA%B2%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%B6%E0%AA%A8">ઓફલાઇન વર્ઝનનો ઓપ્ટિમલ સોલ્યુશન</h2>
+<p><strong>ઓફલાઇન કેચિંગ માટે ઓપ્ટિમલ અલ્ગોરિધમ: &quot;Farthest-in-Future&quot;</strong></p>
+<p><strong>અલ્ગોરિધમ:</strong></p>
+<ol>
+<li>જો કેચમાં જગ્યા છે, તો નવા ઓબ્જેક્ટને મુકો</li>
+<li>જો કેચ ભરેલું છે, તો તે ઓબ્જેક્ટને બહાર કાઢો જેની આગળ સૌથી વધુ દૂરીએ માંગ આવશે</li>
+</ol>
+<p><strong>ઉદાહરણ:</strong></p>
+<ul>
+<li>કેચ કેપેસિટી: k=3</li>
+<li>રિક્વેસ્ટ સીક્વન્સ: 1,7,2,2,3,4,7,5,4,3</li>
+<li>Farthest-in-Future સાથે: 6 કેચ મિસેસ (ઓપ્ટિમલ)</li>
+</ul>
+<p><strong>કેમ ઓપ્ટિમલ છે:</strong></p>
+<ul>
+<li>તે હંમેશા તે ઓબ્જેક્ટને દૂર કરે છે જેની સૌથી મોડી જરૂર પડશે</li>
+<li>આ તર્કસંગત છે કારણ કે આપણે ભવિષ્યની બધી માંગ જાણીએ છીએ</li>
+</ul>
+<h2 id="%E0%AA%93%E0%AA%AB%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%85%E0%AA%AD%E0%AA%BF%E0%AA%97%E0%AA%AE-%E0%AA%93%E0%AA%A8%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%95%E0%AB%87%E0%AA%AE-%E0%AA%95%E0%AA%BE%E0%AA%AE-%E0%AA%A8%E0%AA%A5%E0%AB%80-%E0%AA%95%E0%AA%B0%E0%AA%A4%E0%AB%8B">ઓફલાઇન અભિગમ ઓનલાઇનમાં કેમ કામ નથી કરતો?</h2>
+<p><strong>મુખ્ય સમસ્યા:</strong> <strong>માહિતીની ઉપલબ્ધતા</strong></p>
+<p><strong>ઓફલાઇન વર્ઝનમાં:</strong></p>
+<ul>
+<li>આખી રિક્વેસ્ટ સીક્વન્સ પહેલેથી જ જાણીએ છીએ</li>
+<li>આપણે જાણીએ છીએ કે કયા ઓબ્જેક્ટની આગળ ક્યારે જરૂર પડશે</li>
+<li>&quot;Farthest-in-Future&quot; તર્કસંગત નિર્ણય લઈ શકે છે</li>
+</ul>
+<p><strong>ઓનલાઇન વર્ઝનમાં:</strong></p>
+<ul>
+<li>માત્ર વર્તમાન અને ભૂતકાળની માંગ જાણીએ છીએ</li>
+<li>ભવિષ્યની માંગ અજાણ છે</li>
+<li>&quot;Farthest-in-Future&quot; લાગુ કરી શકાતું નથી</li>
+<li>તાત્કાલિક નિર્ણય લેવો પડે છે</li>
+</ul>
+<h2 id="%E0%AA%93%E0%AA%A8%E0%AA%B2%E0%AA%BE%E0%AA%87%E0%AA%A8-%E0%AA%95%E0%AB%87%E0%AA%9A%E0%AA%BF%E0%AA%82%E0%AA%97%E0%AA%A8%E0%AB%8B-%E0%AA%A1%E0%AA%BF%E0%AA%9F%E0%AA%B0%E0%AB%8D%E0%AA%AE%E0%AA%BF%E0%AA%A8%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%95-%E0%AA%B8%E0%AB%8B%E0%AA%B2%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%B6%E0%AA%A8">ઓનલાઇન કેચિંગનો ડિટર્મિનિસ્ટિક સોલ્યુશન</h2>
+<p><strong>LRUM (Least Recently Used with Marking) અલ્ગોરિધમ</strong></p>
+<p><strong>અલ્ગોરિધમ:</strong></p>
+<ol>
+<li>જો માંગવામાં આવેલ ઓબ્જેક્ટ કેચમાં છે → તેને માર્ક કરો</li>
+<li>જો ઓબ્જેક્ટ કેચમાં નથી:
+<ul>
+<li>જો કેચમાં જગ્યા છે → ઓબ્જેક્ટને મુકો અને માર્ક કરો</li>
+<li>જો કેચ ભરેલું છે:
+<ul>
+<li>જો બધા ઓબ્જેક્ટ્સ માર્ક છે → બધા માર્ક્સ દૂર કરો</li>
+<li>સૌથી જૂનો (LRU) અનમાર્ક્ડ ઓબ્જેક્ટ બહાર કાઢો</li>
+<li>નવા ઓબ્જેક્ટને મુકો અને માર્ક કરો</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>ફેઝ કોન્સેપ્ટ:</strong></p>
+<ul>
+<li>એક ફેઝ = જ્યાં સુધી બધા ઓબ્જેક્ટ્સ માર્ક ન થાય</li>
+<li>દરેક ફેઝમાં બરાબર k વિવિધ ઓબ્જેક્ટ્સ (છેલ્લા ફેઝ સિવાય)</li>
+</ul>
+<p><strong>કોમ્પેટિટિવ એનાલિસિસ:</strong></p>
+<ul>
+<li>જો p = કુલ ફેઝ, તો LRUM કેચ મિસેસ ≤ k×p</li>
+<li>ઓપ્ટિમલ કેચ મિસેસ ≥ p-1</li>
+<li>કોમ્પેટિટિવ ફેક્ટર = k</li>
+</ul>
+<p><strong>કેમ k શ્રેષ્ઠ છે:</strong></p>
+<ul>
+<li>કોઈ પણ ડિટર્મિનિસ્ટિક ઓનલાઇન અલ્ગોરિધમ માટે k કરતા નાનું કોમ્પેટિટિવ ફેક્ટર શક્ય નથી</li>
+<li>આ એક પ્રમાણિત લોઅર બાઉન્ડ છે</li>
+</ul>
+<p><strong>વ્યવહારિક ઉદાહરણ:</strong></p>
+<ul>
+<li>કેચ કેપેસિટી k=3</li>
+<li>રિક્વેસ્ટ: 2,3,3,4,3,2,7,2,2,3,4,6,7,8,9,2,2,8,1,2</li>
+<li>LRUM સાથે 5 ફેઝ અને કોમ્પેટિટિવ ફેક્ટર = 3</li>
+</ul>
+<h2 id="%E0%AA%A8%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B7">નિષ્કર્ષ</h2>
+<p>આ સમજણ તમારી પરીક્ષા માટે અત્યંત મહત્વપૂર્ણ છે કારણ કે તે દર્શાવે છે:</p>
+<ol>
+<li>ઓનલાઇન અલ્ગોરિધમ્સની મર્યાદાઓ</li>
+<li>કોમ્પેટિટિવ એનાલિસિસની જરૂરિયાત</li>
+<li>વ્યવહારિક સિસ્ટમ્સમાં ઓપ્ટિમાઇઝેશનની વાસ્તવિકતા</li>
+</ol>
+<p>મૌખિક પરીક્ષામાં આ મુદ્દાઓ પર 10 મિનિટ સારી રીતે બોલી શકશો!</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

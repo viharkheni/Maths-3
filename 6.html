@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%AA%E0%AB%81%E0%AA%A8%E0%AA%B0%E0%AA%BE%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A4%E0%AA%95-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93-%E0%AA%A6%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%B0%E0%AA%BE-%E0%AA%AB%E0%AA%82%E0%AA%95%E0%AB%8D%E0%AA%B6%E0%AA%A8%E0%AA%A8%E0%AA%BE-%E0%AA%AE%E0%AB%82%E0%AA%B3-%E0%AA%B6%E0%AB%8B%E0%AA%A7%E0%AA%B5%E0%AA%BE---%E0%AA%AE%E0%AB%8C%E0%AA%96%E0%AA%BF%E0%AA%95-%E0%AA%AA%E0%AA%B0%E0%AB%80%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AA%BE%E0%AA%A8%E0%AB%80-%E0%AA%A4%E0%AB%88%E0%AA%AF%E0%AA%BE%E0%AA%B0%E0%AB%80">પુનરાવર્તક પદ્ધતિઓ દ્વારા ફંક્શનના મૂળ શોધવા - મૌખિક પરીક્ષાની તૈયારી</h1>
+<h2 id="%E0%AA%AA%E0%AA%B0%E0%AA%BF%E0%AA%9A%E0%AA%AF">પરિચય</h2>
+<p>આ રિપોર્ટ ગાણિતિક ફંક્શન f : [a, b] → R ના વાસ્તવિક મૂળો શોધવા માટે પુનરાવર્તક પદ્ધતિઓ (iterative methods) વિશે વિસ્તૃત માહિતી પ્રદાન કરે છે. આ પદ્ધતિઓ સંખ્યાત્મક વિશ્લેષણ (numerical analysis) માં અત્યંત મહત્વપૂર્ણ છે અને વ્યવહારિક સમસ્યાઓ ઉકેલવા માટે વ્યાપકપણે ઉપયોગમાં લેવાય છે<a href="mathe_3_bain_material06.pdf">^1</a>.</p>
+<h2 id="%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%82%E0%AA%9F%E0%AA%A8-%E0%AA%B0%E0%AA%BE%E0%AA%AB%E0%AA%B8%E0%AA%A8-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF---%E0%AA%8F%E0%AA%95-%E0%AA%A8%E0%AA%95%E0%AB%8D%E0%AA%95%E0%AA%B0-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">ન્યૂટન-રાફસન પદ્ધતિ - એક નક્કર ઉદાહરણ</h2>
+<h3 id="%E0%AA%AE%E0%AB%82%E0%AA%B3%E0%AA%AD%E0%AB%82%E0%AA%A4-%E0%AA%B8%E0%AA%BF%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%BE%E0%AA%82%E0%AA%A4">મૂળભૂત સિદ્ધાંત</h3>
+<p>ન્યૂટન-રાફસન પદ્ધતિ સૌથી લોકપ્રિય અને શક્તિશાળી પુનરાવર્તક પદ્ધતિઓમાંની એક છે. આ પદ્ધતિ ટેન્જન્ટ લાઈનના સિદ્ધાંત પર આધારિત છે<a href="mathe_3_bain_material06.pdf">^2</a>.</p>
+<p><strong>મૂળભૂત સૂત્ર:</strong><br>
+$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$</p>
+<p><img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/d786bfa5-80ed-4757-9125-104c772d69eb.png" alt="Newton-Raphson method formula and prerequisites diagram"></p>
+<p>Newton-Raphson method formula and prerequisites diagram</p>
+<h3 id="%E0%AA%A8%E0%AA%95%E0%AB%8D%E0%AA%95%E0%AA%B0-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3-%E2%88%9A2-%E0%AA%B6%E0%AB%8B%E0%AA%A7%E0%AA%B5%E0%AB%81%E0%AA%82">નક્કર ઉદાહરણ: √2 શોધવું</h3>
+<p>ચાલો f(x) = x² - 2 ફંક્શનનું મૂળ શોધીએ, જે √2 આપશે.</p>
+<p><strong>આપેલ:</strong></p>
+<ul>
+<li>f(x) = x² - 2</li>
+<li>f'(x) = 2x</li>
+<li>પ્રારંભિક મૂલ્ય: x₀ = 1.5</li>
+</ul>
+<p><strong>પુનરાવર્તક સૂત્ર:</strong><br>
+$x_{n+1} = x_n - \frac{x_n^2 - 2}{2x_n}$</p>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/2e068ee3a34b7c76964bddc26d9a2961/1e974cbc-dae7-462d-a1d1-13abece61cc9/892b72ae.png" alt="Geometric visualization of Newton-Raphson method showing how tangent lines lead to successive approximations"></p>
+<p>Geometric visualization of Newton-Raphson method showing how tangent lines lead to successive approximations</p>
+<p>આ ઉદાહરણમાં આપણે જોઈ શકીએ છીએ કે માત્ર 4 પુનરાવર્તનમાં અસાધારણ ચોકસાઈ પ્રાપ્ત થાય છે.</p>
+<h2 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF-%E0%AA%B2%E0%AA%BE%E0%AA%97%E0%AB%81-%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87%E0%AA%A8%E0%AB%80-%E0%AA%AA%E0%AB%82%E0%AA%B0%E0%AB%8D%E0%AA%B5%E0%AA%B6%E0%AA%B0%E0%AA%A4%E0%AB%8B">પદ્ધતિ લાગુ કરવા માટેની પૂર્વશરતો</h2>
+<h3 id="%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%82%E0%AA%9F%E0%AA%A8-%E0%AA%B0%E0%AA%BE%E0%AA%AB%E0%AA%B8%E0%AA%A8-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87-%E0%AA%9C%E0%AA%B0%E0%AB%82%E0%AA%B0%E0%AB%80-%E0%AA%B6%E0%AA%B0%E0%AA%A4%E0%AB%8B">ન્યૂટન-રાફસન પદ્ધતિ માટે જરૂરી શરતો</h3>
+<ol>
+<li><strong>વિકલન યોગ્યતા (Differentiability):</strong> ફંક્શન f(x) વિકલન યોગ્ય હોવું જોઈએ<a href="mathe_3_bain_material06.pdf">^2</a></li>
+<li><strong>અશૂન્ય વ્યુત્પન્ન (Non-zero Derivative):</strong> f'(x) ≠ 0 મૂળની નજીક હોવું જોઈએ<a href="mathe_3_bain_material06.pdf">^2</a></li>
+<li><strong>યોગ્ય પ્રારંભિક બિંદુ (Good Starting Point):</strong> x₀ મૂળની નજીક હોવું જોઈએ<a href="mathe_3_bain_material06.pdf">^2</a></li>
+<li><strong>સતત વ્યુત્પન્ન:</strong> વધુ ચોકસાઈ માટે f(x) ઓછામાં ઓછું ત્રણ વખત સતત વિકલન યોગ્ય હોવું જોઈએ<a href="mathe_3_bain_material06.pdf">^2</a></li>
+</ol>
+<h3 id="%E0%AA%A6%E0%AB%8D%E0%AA%B5%E0%AA%BF%E0%AA%AD%E0%AA%BE%E0%AA%9C%E0%AA%A8-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF-bisection-method-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87-%E0%AA%9C%E0%AA%B0%E0%AB%82%E0%AA%B0%E0%AB%80-%E0%AA%B6%E0%AA%B0%E0%AA%A4%E0%AB%8B">દ્વિભાજન પદ્ધતિ (Bisection Method) માટે જરૂરી શરતો</h3>
+<ol>
+<li><strong>સતતતા (Continuity):</strong> f(x) અંતરાલ [a, b] પર સતત હોવું જોઈએ<a href="mathe_3_bain_material06.pdf">^1</a></li>
+<li><strong>મધ્યવર્તી મૂલ્ય પ્રમેય (Intermediate Value Theorem):</strong> f(a) · f(b) &lt; 0<a href="mathe_3_bain_material06.pdf">^1</a></li>
+</ol>
+<h2 id="%E0%AA%95%E0%AA%A8%E0%AB%8D%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%9C%E0%AA%A8%E0%AB%8D%E0%AA%B8-%E0%AA%93%E0%AA%B0%E0%AB%8D%E0%AA%A1%E0%AA%B0-convergence-order">કન્વર્જન્સ ઓર્ડર (Convergence Order)</h2>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE">વ્યાખ્યા</h3>
+<p>કન્વર્જન્સ ઓર્ડર એ માપદંડ છે જે દર્શાવે છે કે પુનરાવર્તક પદ્ધતિ કેટલી ઝડપથી મૂળ સુધી પહોંચે છે<a href="mathe_3_bain_material06.pdf">^2</a>.</p>
+<p><strong>ગાણિતિક વ્યાખ્યા:</strong><br>
+$|x_{n+1} - r| \leq C|x_n - r|^p$</p>
+<p>જ્યાં:</p>
+<ul>
+<li>r = સાચું મૂળ</li>
+<li>C = સ્થિર (constant)</li>
+<li>p = કન્વર્જન્સ ઓર્ડર</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/2e068ee3a34b7c76964bddc26d9a2961/b2733857-1a7e-4622-95c0-73edf32b6464/322cfa57.png" alt="Bar chart showing convergence orders of different iterative root-finding methods"></p>
+<p>Bar chart showing convergence orders of different iterative root-finding methods</p>
+<h3 id="%E0%AA%B5%E0%AA%BF%E0%AA%B5%E0%AA%BF%E0%AA%A7-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93%E0%AA%A8%E0%AA%BE-%E0%AA%95%E0%AA%A8%E0%AB%8D%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%9C%E0%AA%A8%E0%AB%8D%E0%AA%B8-%E0%AA%93%E0%AA%B0%E0%AB%8D%E0%AA%A1%E0%AA%B0">વિવિધ પદ્ધતિઓના કન્વર્જન્સ ઓર્ડર</h3>
+<p><strong>મુખ્ય કન્વર્જન્સ પ્રકારો:</strong></p>
+<ol>
+<li><strong>રેખીય કન્વર્જન્સ (p = 1):</strong> દ્વિભાજન પદ્ધતિ, સ્થિર બિંદુ પુનરાવર્તન</li>
+<li><strong>વર્ગાત્મક કન્વર્જન્સ (p = 2):</strong> ન્યૂટન-રાફસન પદ્ધતિ</li>
+<li><strong>અતિરેખીય કન્વર્જન્સ (1 &lt; p &lt; 2):</strong> સેકન્ટ પદ્ધતિ (p ≈ 1.618), મુલર પદ્ધતિ (p ≈ 1.839)</li>
+</ol>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/2e068ee3a34b7c76964bddc26d9a2961/f3bdd685-71f5-43ad-b142-298d74b42174/2b18893d.png" alt="Convergence speed comparison showing Newton-Raphson's quadratic convergence vs Bisection's linear convergence"></p>
+<p>Convergence speed comparison showing Newton-Raphson's quadratic convergence vs Bisection's linear convergence</p>
+<h2 id="%E0%AA%AA%E0%AB%8B%E0%AA%B2%E0%AA%BF%E0%AA%A8%E0%AB%8B%E0%AA%AE%E0%AA%BF%E0%AA%AF%E0%AA%B2-%E0%AA%A1%E0%AA%BF%E0%AA%AB%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%B6%E0%AA%A8-polynomial-deflation">પોલિનોમિયલ ડિફ્લેશન (Polynomial Deflation)</h2>
+<h3 id="%E0%AA%B8%E0%AA%BF%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%BE%E0%AA%82%E0%AA%A4">સિદ્ધાંત</h3>
+<p>જ્યારે પોલિનોમિયલનું એક મૂળ જાણીતું હોય, ત્યારે આપણે વ્યવસ્થિત રીતે અન્ય મૂળો શોધી શકીએ છીએ. આ પ્રક્રિયાને પોલિનોમિયલ ડિફ્લેશન કહેવાય છે<a href="mathe_3_bain_blatt07.pdf">^1</a>.</p>
+<h3 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF">પદ્ધતિ</h3>
+<p>જો P(x) એક પોલિનોમિયલ છે અને r એ તેનું મૂળ છે, તો:<br>
+$P(x) = (x - r) \cdot Q(x)$</p>
+<p>જ્યાં Q(x) એ ઘટાડેલું પોલિનોમિયલ છે.</p>
+<h3 id="%E0%AA%AE%E0%AB%8B%E0%AA%A1%E0%AA%BF%E0%AA%AB%E0%AA%BE%E0%AA%88%E0%AA%A1-%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%82%E0%AA%9F%E0%AA%A8-%E0%AA%B0%E0%AA%BE%E0%AA%AB%E0%AA%B8%E0%AA%A8-%E0%AA%B8%E0%AB%82%E0%AA%A4%E0%AB%8D%E0%AA%B0">મોડિફાઈડ ન્યૂટન-રાફસન સૂત્ર</h3>
+<p>જાણીતા મૂળો r₁, r₂, ..., rₖ માટે:<br>
+$x_{n+1} = x_n - \frac{P(x_n)}{P'(x_n)} \cdot \frac{1}{\prod_{i=1}^{k}(x_n - r_i)}$</p>
+<h3 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%AF%E0%AB%8B%E0%AA%97%E0%AA%BF%E0%AA%95-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">પ્રાયોગિક ઉદાહરણ</h3>
+<p>P(x) = x³ - 6x² + 11x - 6 = (x-1)(x-2)(x-3) માટે:</p>
+<ol>
+<li><strong>પહેલું મૂળ:</strong> x₀ = 0.5 થી શરૂ કરીને r₁ = 1.0 મળે છે</li>
+<li><strong>બીજું મૂળ:</strong> r₁ નો ઉપયોગ કરીને x₀ = 1.5 થી r₂ = 2.0 મળે છે</li>
+<li><strong>ત્રીજું મૂળ:</strong> r₁ અને r₂ નો ઉપયોગ કરીને x₀ = 2.5 થી r₃ = 3.0 મળે છે</li>
+</ol>
+<h2 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93%E0%AA%A8%E0%AB%80-%E0%AA%A4%E0%AB%81%E0%AA%B2%E0%AA%A8%E0%AA%BE">પદ્ધતિઓની તુલના</h2>
+<h3 id="%E0%AA%95%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%AF%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AA%AE%E0%AA%A4%E0%AA%BE-%E0%AA%B5%E0%AA%BF%E0%AA%B6%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%B7%E0%AA%A3">કાર્યક્ષમતા વિશ્લેષણ</h3>
+<p><strong>ચોકસાઈ 10⁻¹⁰ માટે જરૂરી પુનરાવર્તનો:</strong></p>
+<ul>
+<li>ન્યૂટન-રાફસન: 4 પુનરાવર્તનો</li>
+<li>દ્વિભાજન: 35 પુનરાવર્તનો</li>
+</ul>
+<h3 id="%E0%AA%AB%E0%AA%BE%E0%AA%AF%E0%AA%A6%E0%AA%BE-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%AE%E0%AA%B0%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%A6%E0%AA%BE%E0%AA%93">ફાયદા અને મર્યાદાઓ</h3>
+<p><strong>ન્યૂટન-રાફસન પદ્ધતિ:</strong></p>
+<ul>
+<li>ફાયદા: અત્યંત ઝડપી કન્વર્જન્સ (વર્ગાત્મક)</li>
+<li>મર્યાદાઓ: વ્યુત્પન્ન જરૂરી, કન્વર્જ નહીં થઈ શકે</li>
+</ul>
+<p><strong>દ્વિભાજન પદ્ધતિ:</strong></p>
+<ul>
+<li>ફાયદા: હમેશા કન્વર્જ થાય છે, મજબૂત</li>
+<li>મર્યાદાઓ: ધીમી કન્વર્જન્સ (રેખીય)</li>
+</ul>
+<h2 id="%E0%AA%A8%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B7">નિષ્કર્ષ</h2>
+<p>પુનરાવર્તક પદ્ધતિઓ ગાણિતિક સમસ્યાઓ ઉકેલવા માટે શક્તિશાળી સાધનો છે. ન્યૂટન-રાફસન પદ્ધતિ તેની વર્ગાત્મક કન્વર્જન્સને કારણે ખાસ કરીને અસરકારક છે, જ્યારે દ્વિભાજન પદ્ધતિ તેની વિશ્વસનીયતા માટે મહત્વપૂર્ણ છે. પોલિનોમિયલ ડિફ્લેશન ટેકનિક બહુવિધ મૂળોવાળી સમસ્યાઓ માટે વ્યવસ્થિત ઉકેલ પ્રદાન કરે છે.</p>
+<p>મૌખિક પરીક્ષા માટે આ મુખ્ય બાબતોને યાદ રાખો: પૂર્વશરતો, કન્વર્જન્સ ઓર્ડર, અને પ્રાયોગિક અમલીકરણની વિગતો<a href="mathe_3_bain_material03.pdf">^3</a>.</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

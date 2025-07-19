@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>9.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%A8%E0%AB%87%E0%AA%9F%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%95%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%AE%E0%AA%B9%E0%AA%A4%E0%AB%8D%E0%AA%A4%E0%AA%AE-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%B5%E0%AA%BE%E0%AA%B9-maximum-flow---%E0%AA%B5%E0%AA%BF%E0%AA%97%E0%AA%A4%E0%AA%B5%E0%AA%BE%E0%AA%B0-%E0%AA%85%E0%AA%AD%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B8">નેટવર્કમાં મહત્તમ પ્રવાહ (Maximum Flow) - વિગતવાર અભ્યાસ</h1>
+<p>નેટવર્કમાં મહત્તમ પ્રવાહની ગણતરી એ કોમ્પ્યુટર સાયન્સ અને ઓપરેશન્સ રિસર્ચનો એક મહત્વપૂર્ણ વિષય છે. આ સમસ્યા વિવિધ વાસ્તવિક જીવનની પરિસ્થિતિઓમાં જોવા મળે છે, જેમ કે ટ્રાફિક નેટવર્ક, સપ્લાય ચેઇન, અને ડેટા ટ્રાન્સમિશન સિસ્ટમ્સ.</p>
+<h2 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%B5%E0%AB%87%E0%AA%B6-input-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F-output">પ્રવેશ (Input) અને આઉટપુટ (Output)</h2>
+<h3 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%B5%E0%AB%87%E0%AA%B6-input">પ્રવેશ (Input)</h3>
+<p>મહત્તમ પ્રવાહ સમસ્યા માટે નીચેના ઘટકો આવશ્યક છે<a href="mathe_3_bain_material09.pdf">^1</a>:</p>
+<ul>
+<li><strong>નિર્દેશિત ગ્રાફ G(V, E)</strong>: જ્યાં V એ vertices (નોડ્સ) અને E એ edges (કિનારીઓ) છે</li>
+<li><strong>સ્ત્રોત (Source) s</strong>: જ્યાંથી પ્રવાહ શરૂ થાય છે</li>
+<li><strong>લક્ષ્ય (Sink) t</strong>: જ્યાં પ્રવાહ સમાપ્ત થાય છે</li>
+<li><strong>ક્ષમતા (Capacity) ce</strong>: દરેક edge e માટે એક વાસ્તવિક સંખ્યા જે તે edge દ્વારા વહી શકે તેવા મહત્તમ પ્રવાહને દર્શાવે છે</li>
+<li><strong>શરત</strong>: બધી ક્ષમતાઓ પ્રાકૃતિક સંખ્યાઓ છે અને ≥ 1 છે</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/3298eebf43da430e72f179e09bf4a7f7/b2f2720b-43a0-44b4-9b6a-8bf5a0ff0643/293241f9.png" alt="Network Flow Example: Current flow (2/3 means flow=2, capacity=3)"></p>
+<p>Network Flow Example: Current flow (2/3 means flow=2, capacity=3)</p>
+<h3 id="%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F-output">આઉટપુટ (Output)</h3>
+<ul>
+<li><strong>મહત્તમ પ્રવાહ f</strong>: સ્ત્રોત sથી લક્ષ્ય t સુધીનો મહત્તમ પ્રવાહ મૂલ્ય</li>
+<li><strong>પ્રવાહ ફંક્શન</strong>: દરેક edge e માટે fe જે 0 ≤ fe ≤ ce સંતોષે છે</li>
+<li><strong>સંરક્ષણ સિદ્ધાંત</strong>: s અને t સિવાયના બધા નોડ્સ માટે, આવનાર પ્રવાહ = જનાર પ્રવાહ</li>
+</ul>
+<h2 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%89%E0%AA%AA%E0%AA%AF%E0%AB%8B%E0%AA%97%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">વ્યવહારિક ઉપયોગનું ઉદાહરણ</h2>
+<h3 id="job-scheduling-%E0%AA%85%E0%AA%A8%E0%AB%87-processor-allocation">Job Scheduling અને Processor Allocation</h3>
+<p>એક મહત્વપૂર્ણ ઉપયોગ છે <strong>કામ (Jobs) નું પ્રોસેસર પર વિતરણ</strong><a href="mathe_3_bain_material09.pdf">^1</a>:</p>
+<ul>
+<li><strong>સ્થિતિ</strong>: k કામો (J₁, J₂, ..., Jₖ) અને ℓ પ્રોસેસર્સ (P₁, P₂, ..., Pₗ)</li>
+<li><strong>અવરોધો</strong>:
+<ul>
+<li>દરેક કામ Jᵢ નો execution time hᵢ છે</li>
+<li>દરેક પ્રોસેસર Pⱼ ની મફત ક્ષમતા cⱼ છે</li>
+<li>કોઈ કામ કોના પ્રોસેસર પર ચાલી શકે તેની મર્યાદાઓ છે</li>
+</ul>
+</li>
+</ul>
+<p><strong>નેટવર્ક મોડેલ</strong>:</p>
+<ul>
+<li>સ્ત્રોત s થી દરેક કામ સુધી hᵢ ક્ષમતાની edge</li>
+<li>કામોથી પ્રોસેસર્સ સુધી અમર્યાદિત ક્ષમતાની edges (જ્યાં માન્ય હોય)</li>
+<li>દરેક પ્રોસેસરથી લક્ષ્ય t સુધી cⱼ ક્ષમતાની edge</li>
+</ul>
+<h2 id="%E0%AA%B8%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A7%E0%AA%95-%E0%AA%AE%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%97-augmenting-path-%E0%AA%A8%E0%AB%8B-%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B2">સવર્ધક માર્ગ (Augmenting Path) નો ખ્યાલ</h2>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE">વ્યાખ્યા</h3>
+<p>સવર્ધક માર્ગ એ સ્ત્રોત s થી લક્ષ્ય t સુધીનો એવો માર્ગ છે જ્યાં આપણે હજુ પણ વધારાનો પ્રવાહ મોકલી શકીએ છીએ<a href="mathe_3_bain_material09.pdf">^1</a>.</p>
+<h3 id="%E0%AA%B8%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A7%E0%AA%95-%E0%AA%AE%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%97%E0%AA%A8%E0%AB%80-%E0%AA%B6%E0%AA%B0%E0%AA%A4%E0%AB%8B">સવર્ધક માર્ગની શરતો:</h3>
+<ol>
+<li><strong>આગળની દિશામાં</strong>: જો edge (u,v) આગળની દિશામાં છે, તો fe &lt; ce (હજુ ક્ષમતા બાકી છે)</li>
+<li><strong>પાછળની દિશામાં</strong>: જો edge (u,v) પાછળની દિશામાં છે, તો fe &gt; 0 (પ્રવાહ ઘટાડી શકાય)</li>
+</ol>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/3298eebf43da430e72f179e09bf4a7f7/e8496656-5e5f-4d46-a04e-b07dfbe14cee/915646d3.png" alt="Augmenting Path Example: Path s→a→c→d→t with bottleneck capacity 1"></p>
+<p>Augmenting Path Example: Path s→a→c→d→t with bottleneck capacity 1</p>
+<h3 id="%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">ઉદાહરણ</h3>
+<p>ઉપરના ચિત્રમાં, માર્ગ s→a→c→d→t એક સવર્ધક માર્ગ છે કારણ કે:</p>
+<ul>
+<li>s→a: 2/3 (1 વધુ એકમ મોકલી શકાય)</li>
+<li>a→c: 1/3 (2 વધુ એકમ મોકલી શકાય)</li>
+<li>c→d: 1/1 (saturated, પણ backward direction માં ઘટાડી શકાય)</li>
+<li>d→t: 2/4 (2 વધુ એકમ મોકલી શકાય)</li>
+</ul>
+<p><strong>મુક્ત ક્ષમતા (Free Capacity)</strong>: આ માર્ગની ન્યૂનતમ ઉપલબ્ધ ક્ષમતા = min(1, 2, 1, 2) = 1</p>
+<h2 id="%E0%AA%B8%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A7%E0%AA%95-%E0%AA%AE%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%97%E0%AA%A8%E0%AB%80-%E0%AA%85%E0%AA%B8%E0%AB%8D%E0%AA%A4%E0%AA%BF%E0%AA%A4%E0%AB%8D%E0%AA%B5-%E0%AA%A4%E0%AA%AA%E0%AA%BE%E0%AA%B8%E0%AA%B5%E0%AB%80">સવર્ધક માર્ગની અસ્તિત્વ તપાસવી</h2>
+<h3 id="algorithm-bfs-%E0%AA%86%E0%AA%A7%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%A4">Algorithm (BFS આધારિત)</h3>
+<p>સવર્ધક માર્ગની અસ્તિત્વ તપાસવા માટે નીચેનું algorithm વાપરાય છે<a href="mathe_3_bain_material09.pdf">^1</a>:</p>
+<ol>
+<li><strong>પ્રારંભિકીકરણ</strong>:
+<ul>
+<li>R = {s} (પહોંચેલા નોડ્સ)</li>
+<li>S = ∅ (પ્રોસેસ થયેલા નોડ્સ)</li>
+</ul>
+</li>
+<li><strong>પુનરાવર્તન</strong>: જ્યાં સુધી R ≠ S
+<ul>
+<li>v ∈ R - S પસંદ કરો</li>
+<li>દરેક આગળની edge (v,w) માટે જ્યાં fe &lt; ce, w ને R માં ઉમેરો</li>
+<li>દરેક પાછળની edge (w,v) માટે જ્યાં fe &gt; 0, w ને R માં ઉમેરો</li>
+<li>v ને S માં ઉમેરો</li>
+</ul>
+</li>
+<li><strong>પરીક્ષણ</strong>: જો t ∈ R, તો સવર્ધક માર્ગ અસ્તિત્વમાં છે</li>
+</ol>
+<h2 id="ford-fulkerson-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF">Ford-Fulkerson પદ્ધતિ</h2>
+<h3 id="%E0%AA%AE%E0%AB%82%E0%AA%B3%E0%AA%AD%E0%AB%82%E0%AA%A4-algorithm">મૂળભૂત Algorithm</h3>
+<p>Ford-Fulkerson પદ્ધતિ વ્યવસ્થિત રીતે મહત્તમ પ્રવાહ શોધે છે<a href="mathe_3_bain_material09.pdf">^1</a>:</p>
+<ol>
+<li><strong>પ્રારંભિકીકરણ</strong>: બધા edges માટે fe = 0</li>
+<li><strong>પુનરાવર્તન</strong>: જ્યાં સુધી સવર્ધક માર્ગ મળે
+<ul>
+<li>સવર્ધક માર્ગ શોધો</li>
+<li>તેની મુક્ત ક્ષમતા δ ગણો</li>
+<li>માર્ગ પર પ્રવાહ δ વધારો</li>
+</ul>
+</li>
+<li><strong>સમાપ્તિ</strong>: જ્યારે કોઈ સવર્ધક માર્ગ ન મળે</li>
+</ol>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/3298eebf43da430e72f179e09bf4a7f7/360ef2a0-c9d3-4510-a697-fce5ccb4d272/36932f08.png" alt="Ford-Fulkerson Algorithm Steps: Progressive increase of flow until maximum is reached"></p>
+<p>Ford-Fulkerson Algorithm Steps: Progressive increase of flow until maximum is reached</p>
+<h3 id="%E0%AA%9A%E0%AA%B0%E0%AA%A3-%E0%AA%A6%E0%AA%B0-%E0%AA%9A%E0%AA%B0%E0%AA%A3-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">ચરણ-દર-ચરણ ઉદાહરણ:</h3>
+<p><strong>ચરણ 1</strong>: શરૂઆતમાં બધે શૂન્ય પ્રવાહ<br>
+<strong>ચરણ 2</strong>: s→b→t માર્ગ મળ્યો, 4 એકમ પ્રવાહ વધાર્યો<br>
+<strong>ચરણ 3</strong>: s→a→c→d→t માર્ગ મળ્યો, 1 એકમ પ્રવાહ વધાર્યો<br>
+<strong>ચરણ 4</strong>: કોઈ વધુ સવર્ધક માર્ગ નથી, મહત્તમ પ્રવાહ = 5</p>
+<h2 id="%E0%AA%B8%E0%AA%AE%E0%AA%AF-%E0%AA%9C%E0%AA%9F%E0%AA%BF%E0%AA%B2%E0%AA%A4%E0%AA%BE-time-complexity">સમય જટિલતા (Time Complexity)</h2>
+<h3 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%AA%E0%AA%B0%E0%AA%BF%E0%AA%A3%E0%AA%BE%E0%AA%AE%E0%AB%8B">મુખ્ય પરિણામો</h3>
+<p>Ford-Fulkerson પદ્ધતિની સમય જટિલતા નીચે પ્રમાણે છે<a href="mathe_3_bain_material09.pdf">^1</a>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">પદ્ધતિ</th>
+<th style="text-align:left">સમય જટિલતા</th>
+<th style="text-align:left">વર્ણન</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>મૂળભૂત Ford-Fulkerson</strong></td>
+<td style="text-align:left">O(max_flow_value)</td>
+<td style="text-align:left">દરેક પુનરાવર્તનમાં ઓછામાં ઓછો 1 એકમ વધારો</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Edmonds-Karp</strong></td>
+<td style="text-align:left">O(VE²)</td>
+<td style="text-align:left">BFS વાપરીને સૌથી ટૂંકો સવર્ધક માર્ગ શોધે</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>સામાન્ય હદ</strong></td>
+<td style="text-align:left">O(VE × max_flow_value)</td>
+<td style="text-align:left">V = નોડ્સ, E = edges</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E0%AA%AE%E0%AA%B9%E0%AA%A4%E0%AB%8D%E0%AA%B5%E0%AA%AA%E0%AB%82%E0%AA%B0%E0%AB%8D%E0%AA%A3-%E0%AA%B2%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AA%A3%E0%AB%8B">મહત્વપૂર્ણ લક્ષણો:</h3>
+<ul>
+<li><strong>પૂર્ણતાની ખાતરી</strong>: Ford-Fulkerson હંમેશા સમાપ્ત થાય છે અને મહત્તમ પ્રવાહ શોધે છે</li>
+<li><strong>પૂર્ણાંક પ્રવાહ</strong>: જો બધી ક્ષમતાઓ પૂર્ણાંક છે, તો મહત્તમ પ્રવાહ પણ પૂર્ણાંક હશે</li>
+<li><strong>Max-Flow Min-Cut Theorem</strong>: મહત્તમ પ્રવાહ = ન્યૂનતમ cut ની ક્ષમતા</li>
+</ul>
+<h2 id="%E0%AA%AE%E0%AB%82%E0%AA%B3%E0%AA%AD%E0%AB%82%E0%AA%A4-%E0%AA%B8%E0%AA%BF%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%BE%E0%AA%82%E0%AA%A4">મૂળભૂત સિદ્ધાંત</h2>
+<h3 id="%E0%AA%AE%E0%AA%B9%E0%AA%A4%E0%AB%8D%E0%AA%B5%E0%AA%AA%E0%AB%82%E0%AA%B0%E0%AB%8D%E0%AA%A3-%E0%AA%AE%E0%AB%87%E0%AA%B0%E0%AB%8D%E0%AA%95%E0%AB%87-fundamental-principle">મહત્વપૂર્ણ મેર્કે (Fundamental Principle)</h3>
+<p><strong>મેર્કે 9.1</strong>: પ્રવાહ f મહત્તમ છે જો અને માત્ર જો કોઈ સવર્ધક માર્ગ અસ્તિત્વમાં નથી<a href="mathe_3_bain_material09.pdf">^1</a>.</p>
+<p>આ સિદ્ધાંત Ford-Fulkerson algorithm નો આધાર છે અને સુનિશ્ચિત કરે છે કે અમારી પદ્ધતિ સાચું પરિણામ આપે છે.</p>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%AE%E0%AA%B9%E0%AA%A4%E0%AB%8D%E0%AA%B5">વ્યવહારિક મહત્વ</h3>
+<p>મહત્તમ પ્રવાહ algorithm નો ઉપયોગ આજે વિવિધ ક્ષેત્રોમાં થાય છે:</p>
+<ul>
+<li><strong>ટ્રાફિક મેનેજમેન્ટ</strong>: શહેરમાં વાહન પ્રવાહ ઓપ્ટિમાઇઝ કરવા</li>
+<li><strong>કોમ્પ્યુટર નેટવર્ક</strong>: ડેટા ટ્રાન્સમિશન ઓપ્ટિમાઇઝ કરવા</li>
+<li><strong>સપ્લાય ચેઇન</strong>: માલસામાનનું વિતરણ ઓપ્ટિમાઇઝ કરવા</li>
+<li><strong>ઇમેજ પ્રોસેસિંગ</strong>: ઇમેજ સેગમેન્ટેશન માટે</li>
+</ul>
+<p>આ algorithm એ કોમ્પ્યુટર સાયન્સના સૌથી મહત્વપૂર્ણ અને ઉપયોગી algorithms પૈકી એક છે.</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

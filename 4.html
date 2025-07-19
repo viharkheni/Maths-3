@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>4.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%A1%E0%AA%BF%E0%AA%AB%E0%AA%B0%E0%AA%A8%E0%AB%8D%E0%AA%B6%E0%AA%BF%E0%AA%AF%E0%AA%B2-%E0%AA%8F%E0%AA%95%E0%AB%8D%E0%AA%B5%E0%AB%87%E0%AA%B6%E0%AA%A8%E0%AB%8D%E0%AA%B8%E0%AA%A8%E0%AA%BE-%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%AE%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%B8%E0%AB%8B%E0%AA%B2%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%B6%E0%AA%A8-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%AF%E0%AB%81%E0%AA%B2%E0%AA%B0-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF">ડિફરન્શિયલ એક્વેશન્સના ન્યુમેરિકલ સોલ્યુશન અને યુલર પદ્ધતિ</h1>
+<p>આ વિષય મૌખિક પરીક્ષાની તૈયારી માટે ડિફરન્શિયલ એક્વેશન્સના ન્યુમેરિકલ ઉકેલ અને યુલર પદ્ધતિની વિગતવાર સમજૂતી પ્રદાન કરે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। ન્યુમેરિકલ પદ્ધતિઓ ગણિતના તે ક્ષેત્રમાં મહત્વપૂર્ણ છે જ્યાં સીમાબદ્ધ ગણતરીઓ દ્વારા અંદાજિત ઉકેલ મેળવવા પડે છે<a href="mathe_3_bain_material01.pdf">^3</a>।</p>
+<h2 id="%E0%AA%B6%E0%AA%BE-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87-%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%AE%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93%E0%AA%A8%E0%AB%80-%E0%AA%9C%E0%AA%B0%E0%AB%82%E0%AA%B0-%E0%AA%AA%E0%AA%A1%E0%AB%87-%E0%AA%9B%E0%AB%87">શા માટે ન્યુમેરિકલ પદ્ધતિઓની જરૂર પડે છે?</h2>
+<h3 id="%E0%AA%B8%E0%AA%BF%E0%AA%AE%E0%AB%8D%E0%AA%AC%E0%AB%8B%E0%AA%B2%E0%AA%BF%E0%AA%95-%E0%AA%89%E0%AA%95%E0%AB%87%E0%AA%B2%E0%AA%A8%E0%AB%80-%E0%AA%AE%E0%AA%B0%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%A6%E0%AA%BE%E0%AA%93">સિમ્બોલિક ઉકેલની મર્યાદાઓ</h3>
+<p>અમુક પ્રકારના ડિફરન્શિયલ એક્વેશન્સ માટે સિમ્બોલિક ઉકેલ શોધી શકાય છે, પરંતુ ઘણા વ્યવહારિક એપ્લિકેશન્સમાં આવા એક્વેશન્સનો સામનો કરવો પડે છે જેમનો બંધ સ્વરૂપમાં (closed form) ઉકેલ શક્ય નથી<a href="mathe_3_bain_blatt05.pdf">^1</a>। મુખ્ય કારણો નીચે મુજબ છે:</p>
+<p><strong>જટિલ વિક્ષેપક ફંક્શન્સ</strong>: જ્યારે ડિફરન્શિયલ એક્વેશનમાં આવતા વિક્ષેપક ફંક્શન (störfunktion) સિમ્બોલિક સ્વરૂપમાં ઉપલબ્ધ ન હોય, પરંતુ માત્ર ચોક્કસ બિંદુઓ પર જ તેની ગણતરી અથવા માપણી કરી શકાય<a href="mathe_3_bain_blatt05.pdf">^1</a>।</p>
+<p><strong>પ્રાયોગિક એપ્લિકેશન્સ</strong>: કમ્પ્યુટર ગ્રાફિક્સમાં પ્રવાહી પદાર્થોનું મોડેલિંગ, જ્યાં દરેક કણનું વર્તન ડિફરન્શિયલ એક્વેશન દ્વારા વર્ણવવામાં આવે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। આવા કિસ્સાઓમાં દરેક કણ પર લાગતું બળ (F(t)) અન્य કણોની સ્થિતિ અને વેગના આધારે ન્યુમેરિકલી જ ગણવામાં આવે છે।</p>
+<p><img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/12754bc7-91bd-4e96-aded-c75be94b36c2.png" alt="યુલર પદ્ધતિની વિભાવના દર્શાવતું આકૃતિ"></p>
+<p>યુલર પદ્ધતિની વિભાવના દર્શાવતું આકૃતિ</p>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3%E0%AB%8B">વ્યવહારિક ઉદાહરણો</h3>
+<p><strong>કમ્પ્યુટર ગેમ્સ અને સિમ્યુલેશન</strong>: અગ્નિ, ધુમાડો અને પાણીના તરંગોનું વાસ્તવિક દર્શન ઘણીવાર ડિફરન્શિયલ એક્વેશન્સના સિસ્ટમ દ્વારા મોડેલ કરવામાં આવે છે।</p>
+<p><strong>ઇન્જિનિયરિંગ એપ્લિકેશન્સ</strong>: મિકેનિકલ સિસ્ટમ્સ, ઇલેક્ટ્રિકલ સર્કિટ્સ, અને કંટ્રોલ સિસ્ટમ્સમાં ન્યુમેરિકલ ઉકેલ અનિવાર્ય બને છે<a href="mathe_3_bain_material04.pdf">^1</a>।</p>
+<h2 id="%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%AE%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%B8%E0%AB%8B%E0%AA%B2%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%B6%E0%AA%A8%E0%AA%A8%E0%AB%8B-%E0%AA%87%E0%AA%A8%E0%AA%AA%E0%AB%81%E0%AA%9F-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F">ન્યુમેરિકલ સોલ્યુશનનો ઇનપુટ અને આઉટપુટ</h2>
+<h3 id="%E0%AA%87%E0%AA%A8%E0%AA%AA%E0%AB%81%E0%AA%9F-%E0%AA%B5%E0%AA%BF%E0%AA%B6%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%9F%E0%AA%A4%E0%AA%BE%E0%AA%93">ઇનપુટ વિશિષ્ટતાઓ</h3>
+<p>ન્યુમેરિકલ પદ્ધતિ માટે નીચેના ઇનપુટ્સની જરૂર પડે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>:</p>
+<p><strong>ડિફરન્શિયલ એક્વેશન</strong>: પ્રથમ ક્રમનું એક્વેશન y'(x) = f(x, y(x)) સ્વરૂપમાં<br>
+<strong>પ્રારંભિક શરત</strong>: y(x₀) = y₀<br>
+<strong>ડોમેન</strong>: અંતરાલ [x₀, x₀ + L], જ્યાં L &gt; 0</p>
+<h3 id="%E0%AA%86%E0%AA%89%E0%AA%9F%E0%AA%AA%E0%AB%81%E0%AA%9F-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A3%E0%AA%A8">આઉટપુટ વર્ણન</h3>
+<p>આઉટપુટ તરીકે અજ્ઞાત ફંક્શન y(x)ની અંદાજિત વક્રતા મળે છે જે આપેલા અંતરાલ પર ગણવામાં આવે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। આ વક્રતા પ્રારંભિક બિંદુ (x₀, y₀) માંથી પસાર થાય છે અને આપેલા ડિફરન્શિયલ એક્વેશનને સંતોષે છે।</p>
+<h2 id="%E0%AA%AF%E0%AB%81%E0%AA%B2%E0%AA%B0-%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AB%8D%E0%AA%B0%E0%AB%87%E0%AA%95%E0%AB%87%E0%AA%A8%E0%AB%8D%E0%AA%9D%E0%AB%81%E0%AA%97%E0%AA%B5%E0%AB%87%E0%AA%B0%E0%AB%8D%E0%AA%AB%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AB%87%E0%AA%A8-eulers-polygonal-line-method">યુલર સ્ટ્રેકેન્ઝુગવેર્ફાહરેન (Euler's Polygonal Line Method)</h2>
+<h3 id="%E0%AA%AE%E0%AB%82%E0%AA%B3-%E0%AA%B5%E0%AA%BF%E0%AA%9A%E0%AA%BE%E0%AA%B0">મૂળ વિચાર</h3>
+<p>યુલર પદ્ધતિનો મૂળ વિચાર <strong>રિક્તંગફેલ્ડ</strong> (direction field) પર આધારિત છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। દરેક બિંદુ (x₀, y₀) માટે, ડિફરન્શિયલ એક્વેશન y'(x) = f(x, y(x)) એ બિંદુએ સ્પર્શક રેખાનો ઢોળાવ આપે છે।</p>
+<p><strong>રિક્તંગવેક્ટર</strong>: RF(x₀, y₀) = (1, f(x₀, y₀))</p>
+<p>આ વેક્ટર દર્શાવે છે કે જો ઉકેલ વક્ર આ બિંદુમાંથી પસાર થાય તો તેની દિશા શું હશે<a href="mathe_3_bain_blatt05.pdf">^1</a>।</p>
+<h3 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A8%E0%AB%80-%E0%AA%95%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%AF%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%A3%E0%AA%BE%E0%AA%B2%E0%AB%80">પદ્ધતિની કાર્યપ્રણાલી</h3>
+<p><strong>પગલાની વિભાજન</strong>: અંતરાલને n ભાગમાં વહેંચીને સમાન પગલા-કદ h = L/n લેવામાં આવે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>।</p>
+<p><strong>પુનરાવર્તક સૂત્ર</strong>:</p>
+<ul>
+<li>x₁ = x₀ + h, y₁ = y₀ + h·f(x₀, y₀)</li>
+<li>x₂ = x₁ + h, y₂ = y₁ + h·f(x₁, y₁)</li>
+<li>વગેરે...</li>
+</ul>
+<p><strong>સામાન્ય સૂત્ર</strong>:<br>
+(xₙ₊₁, yₙ₊₁) = (xₙ, yₙ) + h·(1, f(xₙ, yₙ))</p>
+<h3 id="%E0%AA%AD%E0%AB%82%E0%AA%B2-%E0%AA%B5%E0%AA%BF%E0%AA%B6%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%B7%E0%AA%A3">ભૂલ વિશ્લેષણ</h3>
+<p>યુલર પદ્ધતિ પ્રથમ ક્રમની પદ્ધતિ છે, એટલે કે વેર્ફાહરેન્સફેહલર (procedural error) F_Euler ∝ h છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। પગલા-કદ જેટલો નાનો હશે, ત્યાર ભૂલ તેટલી ઓછી હશે।</p>
+<h2 id="%E0%AA%B8%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%AE-%E0%AA%93%E0%AA%AB-%E0%AA%A1%E0%AA%BF%E0%AA%AB%E0%AA%B0%E0%AA%A8%E0%AB%8D%E0%AA%B6%E0%AA%BF%E0%AA%AF%E0%AA%B2-%E0%AA%8F%E0%AA%95%E0%AB%8D%E0%AA%B5%E0%AB%87%E0%AA%B6%E0%AA%A8%E0%AB%8D%E0%AA%B8-%E0%AA%AA%E0%AA%B0-%E0%AA%AF%E0%AB%81%E0%AA%B2%E0%AA%B0-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A8%E0%AB%8B-%E0%AA%89%E0%AA%AA%E0%AA%AF%E0%AB%8B%E0%AA%97">સિસ્ટમ ઓફ ડિફરન્શિયલ એક્વેશન્સ પર યુલર પદ્ધતિનો ઉપયોગ</h2>
+<h3 id="%E0%AA%B5%E0%AB%8D%E0%AA%AF%E0%AA%B5%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">વ્યવહારિક ઉદાહરણ</h3>
+<p><strong>સિસ્ટમ</strong>:</p>
+<ul>
+<li>dx/dt = y</li>
+<li>dy/dt = -x</li>
+</ul>
+<p><strong>પ્રારંભિક શરતો</strong>: x(0) = 1, y(0) = 0<br>
+<strong>પગલા-કદ</strong>: h = 0.1</p>
+<h3 id="%E0%AA%AA%E0%AB%81%E0%AA%A8%E0%AA%B0%E0%AA%BE%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A4%E0%AA%95-%E0%AA%85%E0%AA%AE%E0%AA%B2%E0%AB%80%E0%AA%95%E0%AA%B0%E0%AA%A3">પુનરાવર્તક અમલીકરણ</h3>
+<p>દરેક પગલે બન્ને ફંક્શન્સ સાથે સાથે અપડેટ કરવામાં આવે છે<a href="mathe_3_bain_material02.pdf">^4</a>:</p>
+<p><strong>પ્રથમ પગલું</strong> (t = 0):</p>
+<ul>
+<li>dx/dt = y = 0</li>
+<li>dy/dt = -x = -1</li>
+<li>x₁ = 1 + 0.1 × 0 = 1.0</li>
+<li>y₁ = 0 + 0.1 × (-1) = -0.1</li>
+</ul>
+<p><strong>બીજું પગલું</strong> (t = 0.1):</p>
+<ul>
+<li>dx/dt = y = -0.1</li>
+<li>dy/dt = -x = -1.0</li>
+<li>x₂ = 1.0 + 0.1 × (-0.1) = 0.99</li>
+<li>y₂ = -0.1 + 0.1 × (-1.0) = -0.2</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7ae9fcfbd9fa8b50073594c31f5280a9/0a04955c-5640-4c5e-a8d8-74fee71bdde0/f8bc466d.png" alt="યુલર પદ્ધતિનો ઉપયોગ કરીને સિસ્ટમ ઓફ ડિફરન્શિયલ એક્વેશન્સનો ગ્રાફિકલ પ્રતિનિધિત્વ"></p>
+<p>યુલર પદ્ધતિનો ઉપયોગ કરીને સિસ્ટમ ઓફ ડિફરન્શિયલ એક્વેશન્સનો ગ્રાફિકલ પ્રતિનિધિત્વ</p>
+<h3 id="%E0%AA%B8%E0%AA%BE%E0%AA%AE%E0%AA%BE%E0%AA%A8%E0%AB%8D%E0%AA%AF-%E0%AA%B8%E0%AB%82%E0%AA%A4%E0%AB%8D%E0%AA%B0-%E0%AA%B8%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%AE-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87">સામાન્ય સૂત્ર સિસ્ટમ માટે</h3>
+<p>જ્યારે n વેરિયેબલ્સ હોય: <strong>x₁, x₂, ..., xₙ</strong></p>
+<p><strong>સિસ્ટમ</strong>:</p>
+<ul>
+<li>dx₁/dt = f₁(t, x₁, x₂, ..., xₙ)</li>
+<li>dx₂/dt = f₂(t, x₁, x₂, ..., xₙ)</li>
+<li>...</li>
+<li>dxₙ/dt = fₙ(t, x₁, x₂, ..., xₙ)</li>
+</ul>
+<p><strong>યુલર અપડેટ</strong>:</p>
+<ul>
+<li>x₁^(k+1) = x₁^k + h·f₁(tₖ, x₁^k, x₂^k, ..., xₙ^k)</li>
+<li>x₂^(k+1) = x₂^k + h·f₂(tₖ, x₁^k, x₂^k, ..., xₙ^k)</li>
+<li>...</li>
+<li>xₙ^(k+1) = xₙ^k + h·fₙ(tₖ, x₁^k, x₂^k, ..., xₙ^k)</li>
+</ul>
+<h3 id="%E0%AA%AE%E0%AA%BF%E0%AA%95%E0%AB%87%E0%AA%A8%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%B8%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%AE-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3">મિકેનિકલ સિસ્ટમ ઉદાહરણ</h3>
+<p>પાંચ જોડાયેલા માસેસનું સિસ્ટમ<a href="mathe_3_bain_material02.pdf">^4</a>:</p>
+<ul>
+<li>દરેક માસ માટે બે એક્વેશન્સ: સ્થિતિ અને વેગ</li>
+<li>કુલ 10 coupled differential equations</li>
+<li>યુલર પદ્ધતિ દરેક time step પર બધા 10 વેરિયેબલ્સ અપડેટ કરે છે</li>
+</ul>
+<h2 id="%E0%AA%89%E0%AA%9A%E0%AB%8D%E0%AA%9A-%E0%AA%95%E0%AB%8D%E0%AA%B0%E0%AA%AE%E0%AA%A8%E0%AB%80-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%93">ઉચ્ચ ક્રમની પદ્ધતિઓ</h2>
+<p>યુલર પદ્ધતિમાં સુધારા માટે <strong>પ્રેડિક્ટર-કોરેક્ટર પદ્ધતિ</strong> (Heun's method) નો ઉપયોગ કરી શકાય છે<a href="mathe_3_bain_blatt05.pdf">^1</a>:</p>
+<ol>
+<li><strong>પ્રેડિક્ટર</strong>: ỹᵢ₊₁ = yᵢ + h·f(xᵢ, yᵢ)</li>
+<li><strong>કોરેક્ટર</strong>: yᵢ₊₁ = yᵢ + (h/2)·[f(xᵢ, yᵢ) + f(xᵢ₊₁, ỹᵢ₊₁)]</li>
+</ol>
+<p>આ પદ્ધતિ બીજા ક્રમની છે અને વધુ સચોટ પરિણામો આપે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>।</p>
+<h2 id="%E0%AA%A8%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B7">નિષ્કર્ષ</h2>
+<p>યુલર પદ્ધતિ ડિફરન્શિયલ એક્વેશન્સના ન્યુમેરિકલ ઉકેલ માટે સૌથી સરળ અને મૂળભૂત પદ્ધતિ છે<a href="mathe_3_bain_blatt05.pdf">^1</a>। તે એકલ એક્વેશન તેમજ સિસ્ટમ ઓફ એક્વેશન્સ બંનેમાં લાગુ કરી શકાય છે. જોકે તેની ચોકસાઈ મર્યાદિત છે, પરંતુ તેની સરળતા અને સમજવામાં આવતી સુવિધાને કારણે તે ન્યુમેરિકલ ગણિતમાં પાયાનું કામ કરે છે<a href="mathe_3_bain_blatt05.pdf">^1</a>।</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>7.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
+<h1 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%95%E0%AB%83%E0%AA%A4%E0%AA%BF%E0%AA%95-%E0%AA%B8%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%93-%E0%AA%B8%E0%AA%BE%E0%AA%A5%E0%AB%87-%E0%AA%85%E0%AA%82%E0%AA%95%E0%AA%97%E0%AA%A3%E0%AA%BF%E0%AA%A4-%E0%AA%85%E0%AA%B2%E0%AB%8D%E0%AA%97%E0%AB%8B%E0%AA%B0%E0%AA%BF%E0%AA%A7%E0%AA%AE%E0%AB%8D%E0%AA%B8-%E0%AA%B6%E0%AA%BE%E0%AA%B3%E0%AA%BE-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%95%E0%AA%B0%E0%AA%BE%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AB%81%E0%AA%AC%E0%AA%BE-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF">પ્રાકૃતિક સંખ્યાઓ સાથે અંકગણિત અલ્ગોરિધમ્સ: શાળા પદ્ધતિ અને કરાત્સુબા પદ્ધતિ</h1>
+<p>આ રિપોર્ટ મૌખિક ગણિત પરીક્ષાની તૈયારી માટે પ્રાકૃતિક સંખ્યાઓના ગુણાકાર અને સરવાળાની પરંપરાગત અને આધુનિક પદ્ધતિઓનું વિશ્લેષણ પ્રસ્તુત કરે છે<a href="mathe_3_bain_material00.pdf">^1</a>.</p>
+<h2 id="%E0%AA%B6%E0%AA%BE%E0%AA%B3%E0%AA%BE-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A5%E0%AB%80-%E0%AA%B8%E0%AA%B0%E0%AA%B5%E0%AA%BE%E0%AA%B3%E0%AB%8B-addition">શાળા પદ્ધતિથી સરવાળો (Addition)</h2>
+<h3 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A8%E0%AB%80-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%95%E0%AB%8D%E0%AA%B0%E0%AA%BF%E0%AA%AF%E0%AA%BE">પદ્ધતિની પ્રક્રિયા</h3>
+<p>શાળામાં શીખવવામાં આવતી સરવાળાની પદ્ધતિ <strong>બિટ-બાય-બિટ</strong> આધારિત છે. બે પ્રાકૃતિક સંખ્યાઓ z₁ અને z₂ નો સરવાળો કરવા માટે અમે જમણેથી ડાબે તરફ દરેક અંકને <strong>કેરી સાથે</strong> ઉમેરીએ છીએ<a href="mathe_3_bain_material07.pdf">^1</a>.</p>
+<h3 id="%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3---%E0%AA%A6%E0%AB%8D%E0%AA%B5%E0%AA%BF%E0%AA%B8%E0%AA%82%E0%AA%95%E0%AB%87%E0%AA%A4%E0%AA%BF%E0%AA%95-%E0%AA%B8%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%93-%E0%AA%B8%E0%AA%BE%E0%AA%A5%E0%AB%87">ઉદાહરણ - દ્વિસંકેતિક સંખ્યાઓ સાથે</h3>
+<p>બે 6-બિટ દ્વિસંકેતિક સંખ્યાઓનું ઉદાહરણ લેવાય:</p>
+<ul>
+<li>z₁ = (1,0,1,0,1,1) = 43₁₀</li>
+<li>z₂ = (1,1,0,1,1,0) = 54₁₀</li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/17343585aa60e23db0d409af71bc556d/6226fb4c-e5d7-4655-b898-b2f02f7d67bd/a4e62ca5.png" alt="Step-by-step binary addition process showing how carries propagate through bit positions"></p>
+<p>Step-by-step binary addition process showing how carries propagate through bit positions</p>
+<p>દરેક સ્થાન પર કેરીનો પ્રસાર થાય છે:</p>
+<ul>
+<li>સ્થાન 0: 1 + 0 = 1 (કેરી = 0)</li>
+<li>સ્થાન 1: 1 + 1 = 0 (કેરી = 1)</li>
+<li>સ્થાન 2: 0 + 1 + 1 = 0 (કેરી = 1)</li>
+<li>અને આમ આગળ...</li>
+</ul>
+<p>પરિણામ: (1,1,0,0,0,0,1) = 97₁₀<a href="mathe_3_bain_material07.pdf">^1</a></p>
+<h3 id="%E0%AA%B8%E0%AA%AE%E0%AA%AF-%E0%AA%9C%E0%AA%9F%E0%AA%BF%E0%AA%B2%E0%AA%A4%E0%AA%BE">સમય જટિલતા</h3>
+<p>શાળા પદ્ધતિથી સરવાળો કરવા માટે <strong>O(n)</strong> સમય લાગે છે, જ્યાં n એ બિટ્સની સંખ્યા છે. આ શ્રેષ્ઠ શક્ય સમય જટિલતા છે કારણ કે દરેક બિટને ઓછામાં ઓછું એક વખત જોવું આવશ્યક છે<a href="mathe_3_bain_material07.pdf">^1</a>.</p>
+<h2 id="%E0%AA%B6%E0%AA%BE%E0%AA%B3%E0%AA%BE-%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A5%E0%AB%80-%E0%AA%97%E0%AB%81%E0%AA%A3%E0%AA%BE%E0%AA%95%E0%AA%BE%E0%AA%B0-multiplication">શાળા પદ્ધતિથી ગુણાકાર (Multiplication)</h2>
+<h3 id="%E0%AA%AA%E0%AA%A6%E0%AB%8D%E0%AA%A7%E0%AA%A4%E0%AA%BF%E0%AA%A8%E0%AB%80-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%95%E0%AB%8D%E0%AA%B0%E0%AA%BF%E0%AA%AF%E0%AA%BE">પદ્ધતિની પ્રક્રિયા</h3>
+<p>પરંપરાગત ગુણાકાર પદ્ધતિમાં અમે દ્વિતીય સંખ્યાના દરેક અંક માટે <strong>આંશિક ગુણાકાર</strong> બનાવીએ છીએ અને તે બધાને ઉમેરીએ છીએ<a href="mathe_3_bain_material07.pdf">^1</a>.</p>
+<h3 id="%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3---%E0%AA%A6%E0%AB%8D%E0%AA%B5%E0%AA%BF%E0%AA%B8%E0%AA%82%E0%AA%95%E0%AB%87%E0%AA%A4%E0%AA%BF%E0%AA%95-%E0%AA%97%E0%AB%81%E0%AA%A3%E0%AA%BE%E0%AA%95%E0%AA%BE%E0%AA%B0">ઉદાહરણ - દ્વિસંકેતિક ગુણાકાર</h3>
+<p>z₁ = (1,0,1,0,1,1) અને z₂ = (1,1,0,1,1,0) માટે:</p>
+<ol>
+<li>z₂ ના દરેક '1' બિટ માટે આંશિક ગુણાકાર બનાવો:
+<ul>
+<li>h₁ = (0,0,0,0,1,0,1,0,1,1,0)</li>
+<li>h₂ = (0,0,0,1,0,1,0,1,1,0,0)</li>
+<li>h₄ = (0,1,0,1,0,1,1,0,0,0,0)</li>
+<li>h₅ = (1,0,1,0,1,1,0,0,0,0,0)</li>
+</ul>
+</li>
+<li>બધા આંશિક ગુણાકારોને ઉમેરો<br>
+પરિણામ: (1,0,0,1,0,0,0,1,0,0,1,0) = 2322₁₀<a href="mathe_3_bain_material07.pdf">^1</a></li>
+</ol>
+<h3 id="%E0%AA%B8%E0%AA%AE%E0%AA%AF-%E0%AA%9C%E0%AA%9F%E0%AA%BF%E0%AA%B2%E0%AA%A4%E0%AA%BE">સમય જટિલતા</h3>
+<p>શાળા પદ્ધતિથી ગુણાકાર કરવા માટે <strong>O(n²)</strong> સમય લાગે છે. આ બહુ બિટ્સવાળી મોટી સંખ્યાઓ માટે કાર્યક્ષમ નથી અને નોંધપાત્ર રીતે ઘટાડી શકાય છે<a href="mathe_3_bain_material07.pdf">^1</a>.</p>
+<h2 id="%E0%AA%95%E0%AA%B0%E0%AA%BE%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AB%81%E0%AA%AC%E0%AA%BE-%E0%AA%85%E0%AA%B2%E0%AB%8D%E0%AA%97%E0%AB%8B%E0%AA%B0%E0%AA%BF%E0%AA%A7%E0%AA%AE---%E0%AA%AE%E0%AB%82%E0%AA%B3%E0%AA%AD%E0%AB%82%E0%AA%A4-%E0%AA%B5%E0%AA%BF%E0%AA%9A%E0%AA%BE%E0%AA%B0">કરાત્સુબા અલ્ગોરિધમ - મૂળભૂત વિચાર</h2>
+<h3 id="%E0%AA%B8%E0%AB%81%E0%AA%A7%E0%AA%BE%E0%AA%B0%E0%AA%A3%E0%AA%BE%E0%AA%A8%E0%AB%8B-%E0%AA%AE%E0%AB%82%E0%AA%B3-%E0%AA%B5%E0%AA%BF%E0%AA%9A%E0%AA%BE%E0%AA%B0">સુધારણાનો મૂળ વિચાર</h3>
+<p>કરાત્સુબા અલ્ગોરિધમનો મૂળ વિચાર <strong>ડિવાઇડ એન્ડ કોન્કર</strong> અભિગમ પર આધારિત છે. બે n-બિટ સંખ્યાઓના ગુણાકાર માટે શાળા પદ્ધતિમાં 4 આંશિક ગુણાકાર જરૂરી છે, પરંતુ કરાત્સુબા માત્ર <strong>3 આંશિક ગુણાકાર</strong> વાપરે છે<a href="mathe_3_bain_material07.pdf">^1</a>.</p>
+<h3 id="%E0%AA%85%E0%AA%B2%E0%AB%8D%E0%AA%97%E0%AB%8B%E0%AA%B0%E0%AA%BF%E0%AA%A7%E0%AA%AE%E0%AA%A8%E0%AA%BE-%E0%AA%AA%E0%AA%97%E0%AA%B2%E0%AA%BE%E0%AA%82">અલ્ગોરિધમના પગલાં</h3>
+<p>n ≥ 5 બિટ્સવાળી સંખ્યાઓ માટે:</p>
+<ol>
+<li><strong>વિભાજન</strong>: k = ⌊n/2⌋ નક્કી કરો</li>
+<li><strong>ભાગો બનાવો</strong>:
+<ul>
+<li>a' = ઉચ્ચ k બિટ્સ, a = નીચ k બિટ્સ</li>
+<li>b' = ઉચ્ચ k બિટ્સ, b = નીચ k બિટ્સ</li>
+</ul>
+</li>
+<li><strong>સરવાળો</strong>: A = a' + a, B = b' + b</li>
+<li><strong>ત્રણ પુનરાવર્તક કૉલ્સ</strong>:
+<ul>
+<li>P₁ = a' × b'</li>
+<li>P₂ = A × B</li>
+<li>P₃ = a × b</li>
+</ul>
+</li>
+<li><strong>પરિણામ</strong>: z = P₁ × 2²ᵏ + (P₂ - P₁ - P₃) × 2ᵏ + P₃<a href="mathe_3_bain_material07.pdf">^1</a></li>
+</ol>
+<h2 id="%E0%AA%95%E0%AA%B0%E0%AA%BE%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AB%81%E0%AA%AC%E0%AA%BE-%E0%AA%B0%E0%AA%BF%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B6%E0%AA%A8-%E0%AA%B5%E0%AB%83%E0%AA%95%E0%AB%8D%E0%AA%B7">કરાત્સુબા રિકર્શન વૃક્ષ</h2>
+<h3 id="%E0%AA%B5%E0%AB%83%E0%AA%95%E0%AB%8D%E0%AA%B7-%E0%AA%AE%E0%AA%BE%E0%AA%B3%E0%AA%96%E0%AB%81%E0%AA%82">વૃક્ષ માળખું</h3>
+<p>કરાત્સુબા અલ્ગોરિધમ રિકર્શન વૃક્ષ બનાવે છે જ્યાં:</p>
+<ul>
+<li>દરેક સ્તરે <strong>3 ગણા વધુ નોડ્સ</strong> હોય છે</li>
+<li>દરેક નોડ <strong>અડધા કદની</strong> સમસ્યા સાથે કામ કરે છે</li>
+<li>n ≤ 4 સુધી વૃક્ષ વધે છે (બેઝ કેસ)<a href="mathe_3_bain_material07.pdf">^1</a></li>
+</ul>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/17343585aa60e23db0d409af71bc556d/6475d5f5-3588-4e1d-9bae-5715a2cd0086/31b1ac5e.png" alt="Work distribution across recursion levels in Karatsuba algorithm showing increasing work per level"></p>
+<p>Work distribution across recursion levels in Karatsuba algorithm showing increasing work per level</p>
+<h3 id="%E0%AA%B8%E0%AA%AE%E0%AA%AF-%E0%AA%9C%E0%AA%9F%E0%AA%BF%E0%AA%B2%E0%AA%A4%E0%AA%BE-%E0%AA%97%E0%AA%A3%E0%AA%A4%E0%AA%B0%E0%AB%80">સમય જટિલતા ગણતરી</h3>
+<p>દરેક સ્તર i માટે:</p>
+<ul>
+<li>નોડ્સની સંખ્યા: 3ⁱ</li>
+<li>કાર્ય પ્રતિ સ્તર: 3ⁱ × (n/2ⁱ) = 3ⁱ × n/2ⁱ</li>
+</ul>
+<p>કુલ સ્તરો: d = ⌊log₂(n/2)⌋</p>
+<p>કુલ સમય જટિલતા:<br>
+T(n) = Σᵢ₌₀ᵈ (3/2)ⁱ × n = n × (3/2)ᵈ⁺¹-1 / (3/2-1) = O(n^log₂(3)) = <strong>O(n^1.58)</strong><a href="mathe_3_bain_material07.pdf">^1</a></p>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/17343585aa60e23db0d409af71bc556d/4f6faed2-1017-4cfa-b25d-e28dc253235e/78f00cbb.png" alt="Comparison of time complexity between the school multiplication method and Karatsuba algorithm showing significant improvement for larger inputs"></p>
+<p>Comparison of time complexity between the school multiplication method and Karatsuba algorithm showing significant improvement for larger inputs</p>
+<h2 id="%E0%AA%95%E0%AA%B0%E0%AA%BE%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AB%81%E0%AA%AC%E0%AA%BE-%E0%AA%95%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B0%E0%AB%87-%E0%AA%A7%E0%AB%80%E0%AA%AE%E0%AB%81%E0%AA%82-%E0%AA%9B%E0%AB%87">કરાત્સુબા ક્યારે ધીમું છે?</h2>
+<h3 id="%E0%AA%A8%E0%AA%BE%E0%AA%A8%E0%AB%80-%E0%AA%B8%E0%AA%82%E0%AA%96%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%93-%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87">નાની સંખ્યાઓ માટે</h3>
+<p>કરાત્સુબા અલ્ગોરિધમ નાની સંખ્યાઓ (n ≤ 4-8 બિટ્સ) માટે શાળા પદ્ધતિ કરતાં ધીમું છે કારણ કે:</p>
+<ol>
+<li><strong>ઓવરહેડ</strong>: રિકર્શન કૉલ્સ અને વધારાના ગણતરીઓ</li>
+<li><strong>કોન્સ્ટન્ટ ફેક્ટર</strong>: શાળા પદ્ધતિ સરળ અને સીધી છે</li>
+<li><strong>મેમરી ઍક્સેસ</strong>: વધારાના વેરિએબલ્સ અને સ્ટેક સ્પેસ<a href="mathe_3_bain_material07.pdf">^1</a></li>
+</ol>
+<h3 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%87%E0%AA%95%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%95%E0%AA%82%E0%AA%B8%E0%AA%BF%E0%AA%A1%E0%AA%B0%E0%AB%87%E0%AA%B6%E0%AA%A8">પ્રેક્ટિકલ કંસિડરેશન</h3>
+<p>વાસ્તવિક અમલીકરણમાં સામાન્યતે <strong>હાઇબ્રિડ અભિગમ</strong> વાપરવામાં આવે છે:</p>
+<ul>
+<li>નાની સંખ્યાઓ માટે શાળા પદ્ધતિ</li>
+<li>મોટી સંખ્યાઓ (સામાન્યતે &gt; 1000 બિટ્સ) માટે કરાત્સુબા<a href="mathe_3_bain_material07.pdf">^1</a></li>
+</ul>
+<h2 id="%E0%AA%A8%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B7">નિષ્કર્ષ</h2>
+<p>કરાત્સુબા અલ્ગોરિધમ મોટી સંખ્યાઓના ગુણાકાર માટે નોંધપાત્ર સુધારણા લાવે છે, O(n²) ને O(n^1.58) માં ઘટાડીને. તેની રિકર્શન વૃક્ષ વિશ્લેષણ દ્વારા અમે સમજી શકીએ છીએ કે કેવી રીતે ડિવાઇડ એન્ડ કોન્કર તકનીક વધુ કાર્યક્ષમ અલ્ગોરિધમ્સ બનાવવામાં મદદ કરે છે. આજકાલ RSA ક્રિપ્ટોગ્રાફી અને અન્ય એપ્લિકેશન્સમાં હજારો બિટ્સવાળી મોટી સંખ્યાઓ માટે આવી પદ્ધતિઓ અત્યંત જરૂરી છે<a href="mathe_3_bain_material10.pdf">^1</a>.</p>
+<div style="text-align: center">⁂</div>
+
+</body>
+
+</html>
