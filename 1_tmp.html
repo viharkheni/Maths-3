@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///workspaces/Maths-3-/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///workspaces/Maths-3-/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%E0%AA%95%E0%AB%8B%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%9F%E0%AA%B0%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%AB%E0%AB%8D%E0%AA%B2%E0%AB%8B%E0%AA%9F%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AA%E0%AB%8B%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F-%E0%AA%A8%E0%AA%82%E0%AA%AC%E0%AA%B0%E0%AB%8D%E0%AA%B8-%E0%AA%97%E0%AA%A3%E0%AA%BF%E0%AA%A4%E0%AA%B6%E0%AA%BE%E0%AA%B8%E0%AB%8D%E0%AA%A4%E0%AB%8D%E0%AA%B0%E0%AB%80%E0%AA%AF-%E0%AA%97%E0%AB%81%E0%AA%A3%E0%AA%A7%E0%AA%B0%E0%AB%8D%E0%AA%AE%E0%AB%8B-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%AE%E0%AA%B0%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%A6%E0%AA%BE%E0%AA%93">કોમ્પ્યુટરમાં ફ્લોટિંગ-પોઇન્ટ નંબર્સ: ગણિતશાસ્ત્રીય ગુણધર્મો અને મર્યાદાઓ</h1>
+<p>કોમ્પ્યુટર વિજ્ઞાનમાં ન્યુમેરિકલ મેથડ્સના અમલીકરણ માટે <strong>ફ્લોટિંગ-પોઇન્ટ નંબર્સ</strong>નું મહત્વ અને તેમની મર્યાદાઓનું વિશ્લેષણ કરીશું. આ વિષય મૌખિક પરીક્ષાની તૈયારી માટે અત્યંત મહત્વપૂર્ણ છે<a href="mathe_3_bain_material01.pdf">^1</a>.</p>
+<h2 id="%E0%AA%95%E0%AB%8B%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%9F%E0%AA%B0%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%89%E0%AA%AA%E0%AA%B2%E0%AA%AC%E0%AB%8D%E0%AA%A7-%E0%AA%AB%E0%AB%8D%E0%AA%B2%E0%AB%8B%E0%AA%9F%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AA%E0%AB%8B%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F-%E0%AA%A8%E0%AA%82%E0%AA%AC%E0%AA%B0%E0%AB%8D%E0%AA%B8%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%94%E0%AA%AA%E0%AA%9A%E0%AA%BE%E0%AA%B0%E0%AA%BF%E0%AA%95-%E0%AA%B5%E0%AA%B0%E0%AB%8D%E0%AA%A3%E0%AA%A8">કોમ્પ્યુટરમાં ઉપલબ્ધ ફ્લોટિંગ-પોઇન્ટ નંબર્સનું ઔપચારિક વર્ણન</h2>
+<p>કોમ્પ્યુટરમાં ઉપલબ્ધ ફ્લોટિંગ-પોઇન્ટ નંબર્સનો સેટ <strong>F</strong> ચાર પરિમાણો દ્વારા નિર્ધારિત થાય છે<a href="mathe_3_bain_material01.pdf">^1</a>:</p>
+<h3 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%AA%E0%AA%B0%E0%AA%BF%E0%AA%AE%E0%AA%BE%E0%AA%A3%E0%AB%8B">મુખ્ય પરિમાણો:</h3>
+<ul>
+<li><strong>B</strong>: ઉપયોગ થતો આધાર (સામાન્યતે 2)</li>
+<li><strong>t</strong>: મેન્ટિસાના બિટ્સની સંખ્યા</li>
+<li><strong>α, β</strong>: ઘાતાંકની સીમાઓ</li>
+</ul>
+<h3 id="ieee-754-%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AA%BE%E0%AA%A8%E0%AB%8D%E0%AA%A1%E0%AA%B0%E0%AB%8D%E0%AA%A1-%E0%AA%85%E0%AA%A8%E0%AB%81%E0%AA%B8%E0%AA%BE%E0%AA%B0">IEEE 754 સ્ટાન્ડર્ડ અનુસાર:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">પ્રકાર</th>
+<th style="text-align:left">બિટ્સ</th>
+<th style="text-align:left">મેન્ટિસા બિટ્સ</th>
+<th style="text-align:left">ઘાતાંક શ્રેણી</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Single Precision (float)</td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">24</td>
+<td style="text-align:left">-149 થી 104</td>
+</tr>
+<tr>
+<td style="text-align:left">Double Precision (double)</td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">53</td>
+<td style="text-align:left">-1074 થી 971</td>
+</tr>
+</tbody>
+</table>
+<p>ફ્લોટિંગ-પોઇન્ટ નંબરનું સામાન્ય સ્વરૂપ: <strong>M × 2^E</strong> જ્યાં M મેન્ટિસા અને E ઘાતાંક છે<a href="mathe_3_bain_material01.pdf">^1</a>.</p>
+<h2 id="%E0%AA%B0%E0%AA%BE%E0%AA%89%E0%AA%82%E0%AA%A1%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AB%E0%AA%82%E0%AA%95%E0%AB%8D%E0%AA%B6%E0%AA%A8%E0%AA%A8%E0%AA%BE-%E0%AA%97%E0%AB%81%E0%AA%A3%E0%AA%A7%E0%AA%B0%E0%AB%8D%E0%AA%AE%E0%AB%8B">રાઉંડિંગ ફંક્શનના ગુણધર્મો</h2>
+<p><strong>રાઉંડિંગ ફંક્શન</strong> round: R → F એ દરેક વાસ્તવિક સંખ્યાને ફ્લોટિંગ-પોઇન્ટ સંખ્યામાં રૂપાંતરિત કરે છે. તેના મુખ્ય ગુણધર્મો<a href="mathe_3_bain_material01.pdf">^1</a>:</p>
+<h3 id="%E0%AA%86%E0%AA%B5%E0%AA%B6%E0%AB%8D%E0%AA%AF%E0%AA%95-%E0%AA%97%E0%AB%81%E0%AA%A3%E0%AA%A7%E0%AA%B0%E0%AB%8D%E0%AA%AE%E0%AB%8B">આવશ્યક ગુણધર્મો:</h3>
+<ol>
+<li><strong>f ∈ F, x ∈ R</strong> માટે: round(x) = f</li>
+<li><strong>x ∈ R</strong> માટે: round(round(x)) = round(x)</li>
+<li><strong>x ≤ y</strong> માટે: round(x) ≤ round(y)</li>
+</ol>
+<h3 id="%E0%AA%B8%E0%AA%82%E0%AA%AC%E0%AA%82%E0%AA%A7%E0%AA%BF%E0%AA%A4-%E0%AA%B0%E0%AA%BE%E0%AA%89%E0%AA%82%E0%AA%A1%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AD%E0%AB%82%E0%AA%B2">સંબંધિત રાઉંડિંગ ભૂલ:</h3>
+<p>x ∈ R \ {0} માટે સંબંધિત રાઉંડિંગ ભૂલ:</p>
+<p><strong>ε = (round(x) - x) / x</strong></p>
+<p>આ ભૂલ સામાન્યતે મશીન ઇપ્સિલોન (ε) દ્વારા મર્યાદિત હોય છે<a href="mathe_3_bain_material01.pdf">^1</a>.</p>
+<p><img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/912729be3073895f8ad83b418aedea4f/15d3fe8c-ad9e-4ee3-a603-6b4fd1f5eaad/cbc1571f.png" alt="Floating-point arithmetic errors demonstrating violations of mathematical laws"></p>
+<p>Floating-point arithmetic errors demonstrating violations of mathematical laws</p>
+<h2 id="%E0%AA%A8%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%AE%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%AE%E0%AB%87%E0%AA%A5%E0%AA%A1%E0%AB%8D%E0%AA%B8%E0%AA%AE%E0%AA%BE%E0%AA%82-%E0%AA%AB%E0%AB%8D%E0%AA%B2%E0%AB%8B%E0%AA%9F%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AA%E0%AB%8B%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F-%E0%AA%A8%E0%AA%82%E0%AA%AC%E0%AA%B0%E0%AB%8D%E0%AA%B8%E0%AA%A8%E0%AB%8B-%E0%AA%89%E0%AA%AA%E0%AA%AF%E0%AB%8B%E0%AA%97">ન્યુમેરિકલ મેથડ્સમાં ફ્લોટિંગ-પોઇન્ટ નંબર્સનો ઉપયોગ</h2>
+<h3 id="%E0%AA%AE%E0%AB%81%E0%AA%96%E0%AB%8D%E0%AA%AF-%E0%AA%95%E0%AA%BE%E0%AA%B0%E0%AA%A3%E0%AB%8B">મુખ્ય કારણો:</h3>
+<ol>
+<li><strong>પ્રેક્ટિકલ કારણો</strong>: અનંત વાસ્તવિક સંખ્યાઓને સીમિત મેમરીમાં સંગ્રહિત કરવાની જરૂરિયાત<a href="mathe_3_bain_material01.pdf">^1</a></li>
+<li><strong>કાર્યક્ષમતા</strong>: કોમ્પ્યુટર હાર્ડવેર સીધા ફ્લોટિંગ-પોઇન્ટ ઓપરેશન્સને ઝડપથી કરી શકે છે<a href="mathe_3_bain_blatt07.pdf">^2</a></li>
+<li><strong>વ્યાપક શ્રેણી</strong>: ખૂબ નાનાથી ખૂબ મોટા નંબર્સને રજૂ કરી શકે છે<a href="mathe_3_bain_material01.pdf">^1</a></li>
+<li><strong>ઇન્ડસ્ટ્રી સ્ટાન્ડર્ડ</strong>: IEEE 754 સ્ટાન્ડર્ડ વિશ્વવ્યાપી રીતે અપનાવાયું છે<a href="mathe_3_bain_material01.pdf">^1</a></li>
+</ol>
+<h3 id="%E0%AA%8F%E0%AA%AA%E0%AB%8D%E0%AA%B2%E0%AA%BF%E0%AA%95%E0%AB%87%E0%AA%B6%E0%AA%A8-%E0%AA%95%E0%AB%8D%E0%AA%B7%E0%AB%87%E0%AA%A4%E0%AB%8D%E0%AA%B0%E0%AB%8B1">એપ્લિકેશન ક્ષેત્રો<a href="mathe_3_bain_material01.pdf">^1</a>:</h3>
+<ul>
+<li>કોમ્પ્યુટર ગ્રાફિક્સ અને રે ટ્રેસિંગ</li>
+<li>ઇમેજ પ્રોસેસિંગ અને કોમ્પ્રેશન</li>
+<li>સાયન્ટિફિક સિમ્યુલેશન</li>
+<li>કોમ્પ્યુટર ગેમ્સમાં ફિઝિક્સ એન્જિન</li>
+</ul>
+<h2 id="%E0%AA%97%E0%AA%A3%E0%AA%BF%E0%AA%A4%E0%AA%B6%E0%AA%BE%E0%AA%B8%E0%AB%8D%E0%AA%A4%E0%AB%8D%E0%AA%B0%E0%AB%80%E0%AA%AF-%E0%AA%A8%E0%AA%BF%E0%AA%AF%E0%AA%AE%E0%AB%8B%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%89%E0%AA%B2%E0%AB%8D%E0%AA%B2%E0%AA%82%E0%AA%98%E0%AA%A8-%E0%AA%95%E0%AB%8B%E0%AA%A8%E0%AB%8D%E0%AA%95%E0%AB%8D%E0%AA%B0%E0%AB%80%E0%AA%9F-%E0%AA%89%E0%AA%A6%E0%AA%BE%E0%AA%B9%E0%AA%B0%E0%AA%A3%E0%AB%8B">ગણિતશાસ્ત્રીય નિયમોનું ઉલ્લંઘન: કોન્ક્રીટ ઉદાહરણો</h2>
+<p>ફ્લોટિંગ-પોઇન્ટ અંકગણિતમાં વાસ્તવિક સંખ્યાઓ માટે માન્ય ગણિતશાસ્ત્રીય નિયમોનું ઉલ્લંઘન થાય છે<a href="mathe_3_bain_material01.pdf">^1</a>:</p>
+<h3 id="1-%E0%AA%85%E0%AA%B8%E0%AB%8B%E0%AA%B8%E0%AA%BF%E0%AA%8F%E0%AA%9F%E0%AA%BF%E0%AA%B5%E0%AA%BF%E0%AA%9F%E0%AB%80%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%89%E0%AA%B2%E0%AB%8D%E0%AA%B2%E0%AA%82%E0%AA%98%E0%AA%A8">1. અસોસિએટિવિટીનું ઉલ્લંઘન:</h3>
+<p><strong>ઉદાહરણ</strong>: (a + b) + c ≠ a + (b + c)</p>
+<pre class="hljs"><code><div>a = 1×10²⁰
+b = 1.0  
+c = -1×10²⁰
+
+(a + b) + c = (1×10²⁰ + 1) + (-1×10²⁰) = 0.0
+a + (b + c) = 1×10²⁰ + (1 + (-1×10²⁰)) = 0.0
+</div></code></pre>
+<p>આ ઉદાહરણમાં જો કે પરિણામ સમાન આવે છે, પરંતુ ઇન્ટરમીડિયેટ પ્રોસેસિંગ અલગ હોય છે<a href="mathe_3_bain_blatt07.pdf">^2</a>.</p>
+<h3 id="2-%E0%AA%A6%E0%AA%B6%E0%AA%BE%E0%AA%82%E0%AA%B6-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%A4%E0%AA%BF%E0%AA%A8%E0%AA%BF%E0%AA%A7%E0%AA%BF%E0%AA%A4%E0%AB%8D%E0%AA%B5%E0%AA%A8%E0%AB%80-%E0%AA%B8%E0%AA%AE%E0%AA%B8%E0%AB%8D%E0%AA%AF%E0%AA%BE">2. દશાંશ પ્રતિનિધિત્વની સમસ્યા:</h3>
+<p><strong>1/10 નું ઉદાહરણ</strong>:</p>
+<ul>
+<li>દશાંશમાં: 0.1 (ચોક્કસ)</li>
+<li>બાઇનરીમાં: 0.00011001100110011... (અનંત પુનરાવર્તન)</li>
+<li>ફ્લોટિંગ-પોઇન્ટમાં: ≈ 0.100000001490116<a href="mathe_3_bain_material01.pdf">^1</a></li>
+</ul>
+<h3 id="3-%E0%AA%A1%E0%AA%BF%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AB%8D%E0%AA%B0%E0%AA%BF%E0%AA%AC%E0%AB%8D%E0%AA%AF%E0%AB%81%E0%AA%9F%E0%AA%BF%E0%AA%B5%E0%AA%BF%E0%AA%9F%E0%AB%80%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%89%E0%AA%B2%E0%AB%8D%E0%AA%B2%E0%AA%82%E0%AA%98%E0%AA%A8">3. ડિસ્ટ્રિબ્યુટિવિટીનું ઉલ્લંઘન:</h3>
+<p><strong>ઉદાહરણ</strong>: a × (b + c) ≠ (a × b) + (a × c)</p>
+<p>જ્યારે b અને c ખૂબ નાના હોય અને a ખૂબ મોટું હોય, ત્યારે રાઉંડિંગ ભૂલોને કારણે આ નિયમ નિષ્ફળ જાય છે<a href="mathe_3_bain_blatt07.pdf">^2</a>.</p>
+<h3 id="4-%E0%AA%86%E0%AA%87%E0%AA%A1%E0%AB%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%9F%E0%AB%80-%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%8B%E0%AA%AA%E0%AA%B0%E0%AB%8D%E0%AA%9F%E0%AB%80%E0%AA%A8%E0%AB%81%E0%AA%82-%E0%AA%89%E0%AA%B2%E0%AB%8D%E0%AA%B2%E0%AA%82%E0%AA%98%E0%AA%A8">4. આઇડેન્ટિટી પ્રોપર્ટીનું ઉલ્લંઘન:</h3>
+<p>અત્યંત નાની સંખ્યાઓ માટે: a + 0 ≠ a</p>
+<p>ઉદાહરણ: 1×10⁻⁵⁰ + 0 કદાચ 1×10⁻⁵⁰ ની બરાબર ન આવે<a href="mathe_3_bain_blatt07.pdf">^2</a>.</p>
+<h2 id="%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%87%E0%AA%95%E0%AB%8D%E0%AA%9F%E0%AA%BF%E0%AA%95%E0%AA%B2-%E0%AA%87%E0%AA%AE%E0%AB%8D%E0%AA%AA%E0%AB%8D%E0%AA%B2%E0%AA%BF%E0%AA%95%E0%AB%87%E0%AA%B6%E0%AA%A8%E0%AB%8D%E0%AA%B8">પ્રેક્ટિકલ ઇમ્પ્લિકેશન્સ</h2>
+<h3 id="%E0%AA%B0%E0%AA%BE%E0%AA%89%E0%AA%82%E0%AA%A1%E0%AA%BF%E0%AA%82%E0%AA%97-%E0%AA%AD%E0%AB%82%E0%AA%B2%E0%AB%8B%E0%AA%A8%E0%AA%BE-%E0%AA%B8%E0%AB%8D%E0%AA%B0%E0%AB%8B%E0%AA%A4%E0%AB%8B1">રાઉંડિંગ ભૂલોના સ્રોતો<a href="mathe_3_bain_material01.pdf">^1</a>:</h3>
+<ol>
+<li><strong>ઇનપુટ ડિસ્ક્રેટાઇઝેશન</strong>: જ્યારે વાસ્તવિક નંબર્સને ફ્લોટિંગ-પોઇન્ટમાં કન્વર્ટ કરીએ છીએ</li>
+<li><strong>ઓપરેશનલ ભૂલો</strong>: અંકગણિત ઓપરેશન્સ દરમિયાન થતી રાઉંડિંગ ભૂલો</li>
+</ol>
+<h3 id="%E0%AA%AE%E0%AA%B6%E0%AB%80%E0%AA%A8-%E0%AA%87%E0%AA%AA%E0%AB%8D%E0%AA%B8%E0%AA%BF%E0%AA%B2%E0%AB%8B%E0%AA%A8">મશીન ઇપ્સિલોન:</h3>
+<ul>
+<li>Single precision: ≈ 1.19 × 10⁻⁷</li>
+<li>Double precision: ≈ 2.22 × 10⁻¹⁶</li>
+</ul>
+<h2 id="%E0%AA%B8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%82%E0%AA%B6-%E0%AA%85%E0%AA%A8%E0%AB%87-%E0%AA%A8%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%95%E0%AA%B0%E0%AB%8D%E0%AA%B7">સારાંશ અને નિષ્કર્ષ</h2>
+<p>ફ્લોટિંગ-પોઇન્ટ અંકગણિત એ કોમ્પ્યુટેશનલ ગણિતશાસ્ત્રની પ્રાયોગિક જરૂરિયાત છે, પરંતુ તે વાસ્તવિક સંખ્યાઓના ગુણધર્મોને સંપૂર્ણ રીતે જાળવી શકતું નથી<a href="mathe_3_bain_material01.pdf">^1</a>. ન્યુમેરિકલ મેથડ્સના અમલીકરણમાં આ મર્યાદાઓને સમજવી અને તેનો યોગ્ય ઉપયોગ કરવો અત્યંત મહત્વપૂર્ણ છે<a href="mathe_3_bain_blatt07.pdf">^2</a>.</p>
+<p><strong>મુખ્ય બાબતો</strong>:</p>
+<ul>
+<li>IEEE 754 સ્ટાન્ડર્ડ દ્વારા નિયંત્રિત</li>
+<li>રાઉંડિંગ ભૂલો અનિવાર્ય</li>
+<li>ગણિતશાસ્ત્રીય નિયમોનું ઉલ્લંઘન સંભવિત</li>
+<li>પ્રેક્ટિકલ કોમ્પ્યુટિંગ માટે જરૂરી સમજૂતી</li>
+</ul>
+<p>આ જ્ઞાન ન્યુમેરિકલ સ્ટેબિલિટી અને ઓટિમાઇઝેશનની ડિઝાઇનમાં મહત્વપૂર્ણ ભૂમિકા ભજવે છે.</p>
+<div style="text-align: center">&#x2042;</div>
+
+</body>
+
+</html>
